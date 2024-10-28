@@ -18,7 +18,7 @@ public class Trainer extends Person{
     
     @Override
     public String lineRepresentation() {
-    
+        return ID + "," + name + "," + email + "," + speciality + "," + phoneNum;
     }
     
 }

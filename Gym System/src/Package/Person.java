@@ -9,10 +9,10 @@ package Package;
  * @author 20112
  */
 public abstract class Person {
-    private String ID;
-    private String name;
-    private String email;
-    private String phoneNum;
+    public String ID;
+    public String name;
+    public String email;
+    public String phoneNum;
 
     public Person(String ID, String name, String email, String phoneNum) {
         this.ID = ID;
@@ -23,7 +23,7 @@ public abstract class Person {
     
     abstract String lineRepresentation();
     
-    public int getSearchKey() {
-    
+    public String getSearchKey() {
+        return ID;
     }
 }
