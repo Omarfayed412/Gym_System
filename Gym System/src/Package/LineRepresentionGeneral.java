@@ -8,6 +8,6 @@ package Package;
  *
  * @author DELL-G3
  */
-public class LineRepresentionGeneral {
-    
+public interface LineRepresentionGeneral {
+    String lineRepresentation();
 }

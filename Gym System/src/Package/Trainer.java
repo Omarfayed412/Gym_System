@@ -10,15 +10,17 @@ package Package;
  */
 public class Trainer extends Person{
     private String speciality;
+    private final String phoneNumber;
 
-    public Trainer(String ID, String name, String email, String phoneNum, String speciality) {
-        super(ID, name, email, phoneNum);
+    public Trainer(String ID, String name, String email, String speciality,String phoneNumber) {
+        super(ID, name, email);
         this.speciality = speciality;
+        this.phoneNumber = phoneNumber;
     }
     
     @Override
     public String lineRepresentation() {
-        return ID + "," + name + "," + email + "," + speciality + "," + phoneNum;
+        return LineRepresentationForPerson()+ speciality + "," + phoneNumber;
     }
     
 }

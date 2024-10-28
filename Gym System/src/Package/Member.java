@@ -9,18 +9,22 @@ package Package;
  * @author 20112
  */
 public class Member extends Person{
-    private String membership;
-    private String status;
+    private final String membershipType;
+    private final String phoneNumber;
+    private final String status;
 
-    public Member(String ID, String name, String email, String phoneNum, String membership, String status) {
-        super(ID, name, email, phoneNum);
-        this.membership = membership;
+    public Member(String membershipType, String phoneNumber, String status, String ID, String name, String email) {
+        super(ID, name, email);
+        this.membershipType = membershipType;
+        this.phoneNumber = phoneNumber;
         this.status = status;
     }
+
     
-    @Override
+
+     @Override
     public String lineRepresentation() {
-    
+        return LineRepresentationForPerson() + ", " + membershipType + ", " + phoneNumber + ", " + status;
     }
     
 }
