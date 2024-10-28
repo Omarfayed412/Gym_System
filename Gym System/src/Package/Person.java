@@ -9,10 +9,10 @@ package Package;
  * @author 20112
  */
 public abstract class Person {
-    public String ID;
-    public String name;
-    public String email;
-    public String phoneNum;
+    protected String ID;
+    protected String name;
+    protected String email;
+    protected String phoneNum;
 
     public Person(String ID, String name, String email, String phoneNum) {
         this.ID = ID;

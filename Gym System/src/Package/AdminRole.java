@@ -4,7 +4,7 @@
  */
 package Package;
 
-import java.util.ArrayList;
+import java.util.*;
 
 /**
  *
@@ -12,8 +12,13 @@ import java.util.ArrayList;
  */
 public class AdminRole{
     private TrainerDatabase database;
+
+    public AdminRole() {
+        this.database = database;
+    }
     
-    public boolean addTrainer(String trainerID, String name, String email, String speciality, String phoneNum) {
+    
+    public void addTrainer(String trainerID, String name, String email, String speciality, String phoneNum) {
     
     }
     
