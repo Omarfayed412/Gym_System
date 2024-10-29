@@ -11,6 +11,20 @@ import java.util.Scanner;
  * @author DELL-G3
  */
 public class main {
+    /*public static void main(String[] args) {
+
+    }
+    public static void adminMenu() {
+    
+    }
+    
+    public static void trainerMenu() {
+    
+    }
+    
+    public static void mainMenu() {
+    
+    }*/
     private static final AdminRole admin = new AdminRole();
     private static final TrainerRole trainer = new TrainerRole();
     
@@ -26,7 +40,7 @@ public class main {
             System.out.println("3. Exit");
             
             int choice = input.nextInt();
-            input.nextLine();  // Consume newline
+            input.nextLine();  
             switch (choice) {
                 case 1 -> adminMenu();
                 case 2 -> trainerMenu();
@@ -52,7 +66,7 @@ public class main {
             System.out.println("4. Logout");
 
             int choice = input.nextInt();
-            input.nextLine();  // Consume newline
+            input.nextLine();  
             
             switch (choice) {
                 case 1 -> {
@@ -106,7 +120,7 @@ public class main {
             System.out.println("8. Logout");
             
             int choice = input.nextInt();
-            input.nextLine();  // Consume newline
+            input.nextLine();
             
             switch (choice) {
                 case 1 -> {
@@ -137,7 +151,7 @@ public class main {
                     int duration = input.nextInt();
                     System.out.print("Max Participants: ");
                     int maxParticipants = input.nextInt();
-                    input.nextLine(); // Consume newline
+                    input.nextLine();
                     trainer.addClass(classId, className, trainerId, duration, maxParticipants);
                 }
                 case 3 -> {
