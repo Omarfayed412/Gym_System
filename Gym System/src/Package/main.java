@@ -3,9 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Package;
-import java.util.*;
-import java.io.*;
-import java.lang.System;
+
 /**
  *
  * @author DELL-G3
@@ -13,5 +11,18 @@ import java.lang.System;
 public class main {
     public static void main(String[] args) {
 
+    }
+    public static void adminMenu() {
+    
+    }
+    
+    public static void trainerMenu() {
+    
+    }
+    
+    public static void mainMenu() {
+    
+    }
+    
 }
 

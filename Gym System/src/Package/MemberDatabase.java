@@ -18,7 +18,7 @@ public class MemberDatabase extends Database {
 
     @Override
     public Record createRecordFrom(String line) {
-        String ID, name, membership, phoneNum, status, email;
+        String ID = null, name = null, membership = null, phoneNum = null, status = null, email = null;
         int duration;
         String[] words = line.split(line);
         for (int i = 0; i <= words.length - 1; i++) {

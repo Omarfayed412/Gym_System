@@ -20,7 +20,7 @@ public class TrainerDatabase extends Database{
 
     @Override
     public Record createRecordFrom(String line) {
-        String ID, name, phoneNum, email, speciality;
+        String ID = null, name = null, phoneNum = null, email = null, speciality = null;
         String[] words = line.split(line);
         for (int i = 0; i <= words.length - 1; i++) {
             switch (i) {

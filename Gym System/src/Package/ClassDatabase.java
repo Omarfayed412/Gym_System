@@ -16,8 +16,8 @@ public class ClassDatabase extends Database{
 
     @Override
     public Record createRecordFrom(String line) {
-        String ID, name, trainerId;
-        int duration;
+        String ID = null, name = null, trainerId = null;
+        int duration = 0;
         String[] words = line.split(line);
         for (int i = 0; i <= words.length - 1; i++) {
             switch (i) {
