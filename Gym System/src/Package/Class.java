@@ -9,18 +9,21 @@ package Package;
  * @author 20112
  */
 public class Class{
-    private String ID;
-    private String name;
+    private String classID;
+    private String className;
     private String trainerID;
     private int duration;
     private static int avialableSeats;
 
-    public Class(String ID, String name, String trainerID, int duration) {
-        this.ID = ID;
-        this.name = name;
+    public Class(String classID, String className, String trainerID, int duration) {
+        this.classID = classID;
+        this.className = className;
         this.trainerID = trainerID;
         this.duration = duration;
+        Class.avialableSeats = avialableSeats;
     }
+
+    
 
     public static int getAvialableSeats() {
         return avialableSeats;
@@ -29,12 +32,13 @@ public class Class{
     public static void setAvialableSeats(int avialableSeats) {
         Class.avialableSeats = avialableSeats;
     }
-    public String lineRepresentation() {
     
+    public String lineRepresentation() {
+        return classID + "," + className + "," + trainerID + "," + duration + "," + avialableSeats;
     }
         
-    public int getSearchKey() {
-    
+        public String getSearchKey() {
+        return classID;
     }
     
 }

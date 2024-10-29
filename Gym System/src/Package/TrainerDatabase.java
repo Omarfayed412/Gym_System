@@ -7,11 +7,13 @@ package Package;
 import java.util.*;
 import java.io.*;
 import java.lang.System;
+
 /**
  *
  * @author 20112
  */
 public class TrainerDatabase {
+
     private final List<Trainer> records;
     private final String filename;
 
@@ -20,7 +22,6 @@ public class TrainerDatabase {
         this.records = new ArrayList<>();
         //readFromFile();
     }
-
 
     public void readFromFile() {
         records.clear();
@@ -37,8 +38,8 @@ public class TrainerDatabase {
         }
     }
 
-
     public Trainer createRecordFrom(String line) {
+        //parse
         String[] data = line.split(", ");
         if (data.length == 5) {
             String id = data[0];
@@ -55,11 +56,9 @@ public class TrainerDatabase {
         return records;
     }
 
-
     public boolean contains(String key) {
         return records.stream().anyMatch(trainer -> trainer.getSearchKey().equals(key));
     }
-
 
     public Trainer getRecord(String key) {
         return records.stream()
@@ -76,7 +75,6 @@ public class TrainerDatabase {
         }
     }
 
-
     public void deleteRecord(String key) {
         records.removeIf(trainer -> trainer.getSearchKey().equals(key));
     }
@@ -89,6 +87,6 @@ public class TrainerDatabase {
             }
         } catch (IOException e) {
             System.out.println("Error writing to file");
-}
+        }
     }
 }

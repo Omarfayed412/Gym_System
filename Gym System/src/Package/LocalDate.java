@@ -8,16 +8,17 @@ package Package;
  *
  * @author 20112
  */
-public class LocalDate {
-    private int day, month, year;
 
-    public LocalDate(int day, int month, int year) {
-        this.day = day;
-        this.month = month;
-        this.year = year;
-    }
-    
-    public String getDate() {
-        return this.day +"/"+this.month +"/"+ this.year;
-    } 
-}
+//public class LocalDate {
+//    private int day, month, year;
+//
+//    public LocalDate(int day, int month, int year) {
+//        this.day = day;
+//        this.month = month;
+//        this.year = year;
+//    }
+//    
+//    public String getDate() {
+//        return this.day +"/"+this.month +"/"+ this.year;
+//    } 
+//}
