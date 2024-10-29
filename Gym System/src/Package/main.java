@@ -7,7 +7,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Scanner;
 /**
- *
+ * Github: https://github.com/Omarfayed412/Gym_System
  * @author DELL-G3
  */
 public class main {    

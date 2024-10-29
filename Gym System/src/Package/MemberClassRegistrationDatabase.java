@@ -7,7 +7,7 @@ package Package;
 import java.time.LocalDate;
 
 /**
- *
+ * Github: https://github.com/Omarfayed412/Gym_System
  * @author 20112
  */
 public class MemberClassRegistrationDatabase extends Database {
