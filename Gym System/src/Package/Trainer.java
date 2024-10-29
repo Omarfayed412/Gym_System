@@ -9,18 +9,19 @@ package Package;
  * @author 20112
  */
 public class Trainer extends Person{
-    private String speciality;
+    private final String speciality;
     private final String phoneNumber;
-
-    public Trainer(String ID, String name, String email, String speciality,String phoneNumber) {
-        super(ID, name, email);
+    private final String email;
+    public Trainer(String ID, String name, String email, String speciality, String phoneNumber) {
+        super(ID, name);
+        this.email = email;
         this.speciality = speciality;
         this.phoneNumber = phoneNumber;
     }
     
     @Override
     public String lineRepresentation() {
-        return LineRepresentationForPerson()+ speciality + "," + phoneNumber;
+        return super.lineRepresentation()+ "," + this.email + "," + this.speciality + "," + this.phoneNumber;
     }
     
 }

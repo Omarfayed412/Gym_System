@@ -12,19 +12,19 @@ public class Member extends Person{
     private final String membershipType;
     private final String phoneNumber;
     private final String status;
+    private final String email;
 
-    public Member(String membershipType, String phoneNumber, String status, String ID, String name, String email) {
-        super(ID, name, email);
+    public Member(String ID, String name, String membershipType, String phoneNumber, String status, String email) {
+        super(ID, name);
         this.membershipType = membershipType;
         this.phoneNumber = phoneNumber;
         this.status = status;
+        this.email = email;
     }
-
     
-
-     @Override
-    public String lineRepresentation() {
-        return LineRepresentationForPerson() + ", " + membershipType + ", " + phoneNumber + ", " + status;
+    @Override
+    public String lineRepresentation() {      
+        return super.lineRepresentation() + "," + this.membershipType + "," + this.email + "," + this.phoneNumber + "," + this.status;
     }
     
 }

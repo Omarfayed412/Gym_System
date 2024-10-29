@@ -8,25 +8,18 @@ package Package;
  *
  * @author 20112
  */
-public abstract class Person implements LineRepresentionGeneral{
-    protected String ID;
-    protected String name;
-    protected String email;
-    
+public abstract class Person{
+    private final String ID;
+    private final String name;    
 
-    public Person(String ID, String name, String email) {
+    public Person(String ID, String name) {
         this.ID = ID;
-        this.name = name;
-        this.email = email;
-        
+        this.name = name;        
     }
     
-    protected String LineRepresentationForPerson() {
-        return ID + ", " + name + ", " + email;
+    public String lineRepresentation() {
+        return this.ID + "," + this.name;
     }
-    
-    @Override
-    public abstract String lineRepresentation();
     
     public String getSearchKey() {
         return ID;

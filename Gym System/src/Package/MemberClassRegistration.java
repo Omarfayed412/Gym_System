@@ -23,23 +23,23 @@ public class MemberClassRegistration {
     }
 
     public String getMemberID() {
-        return memberID;
+        return this.memberID;
     }
 
     public String getClassID() {
-        return classID;
+        return this.classID;
     }
 
     public LocalDate getRegistrationDate() {
-        return registrationDate;
+        return this.registrationDate;
     }
     
     public String getSearchKey() {
-        return /*this.*/memberID + /*this.*/classID;
+        return this.memberID + this.classID;
     }
     
     public String lineRepresentation( ) {
-        return memberID + ", " + classID + ", " + registrationDate + ", " + status;
+        return this.memberID + "," + this.classID + "," + this.registrationDate + "," + this.status;
     
     }
     
