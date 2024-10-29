@@ -17,10 +17,10 @@ public class MemberDatabase extends Database {
     }
 
     @Override
-    public Record createRecordFrom(String line) {
+    public Member createRecordFrom(String line) {
         String ID = null, name = null, membership = null, phoneNum = null, status = null, email = null;
         int duration;
-        String[] words = line.split(line);
+        String[] words = line.split(",");
         for (int i = 0; i <= words.length - 1; i++) {
             switch (i) {
                 case 0 -> ID = words[i];

@@ -18,8 +18,10 @@ import java.util.Scanner;
 public abstract class Database {
     private final String fileName;
     private ArrayList<Record> records;
+    
     public Database(String fileName) {
         this.fileName = fileName;
+        this.records = new ArrayList<>();
     }
     
     public boolean readFromFile() {
@@ -28,12 +30,13 @@ public abstract class Database {
             Scanner scanner = new Scanner(myFile);
             while (scanner.hasNext()) {
                 String line = scanner.nextLine();
-                if(line.isEmpty()) ;
+                if(line.isEmpty()) continue;
                 else{
                     Record myRecord = createRecordFrom(line);
                     if (myRecord != null){ 
-                        records.add(myRecord);
+                        this.records.add(myRecord);
                     }
+                    else System.out.println("Record is null.");
                 }
             }            
         }
@@ -48,15 +51,12 @@ public abstract class Database {
     
     //Needs to be casted in each class
     public  ArrayList<Record> returnAllRecords() {
-        return records;
+        return this.records;
     }
     
     public boolean contains(String key) {
-        for (Record i : records) {
+        for (Record i : this.records) {
             if(i.getSearchKey().equalsIgnoreCase(key)) return true;
-            else {
-                System.out.println("Object not found!!");
-            }
         }
         return false;
     }
@@ -68,7 +68,6 @@ public abstract class Database {
             }
         }
         return null;
-    
     }
     
     public boolean insertRecord(Record myRecord) {
@@ -88,7 +87,7 @@ public abstract class Database {
     public boolean deleteRecord(String key) {
         if (contains(key)) {
             Record record = getRecord(key);
-            records.remove(record);
+            this.records.remove(record);
             return true;
         }
         return false;
@@ -99,6 +98,7 @@ public abstract class Database {
             FileWriter myFile = new FileWriter(this.fileName);
             for(Record i : records) {
                 myFile.write(i.lineRepresentation());
+                myFile.write("\n");
             }
             myFile.close();
         }
