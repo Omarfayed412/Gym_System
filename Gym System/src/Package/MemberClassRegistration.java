@@ -8,6 +8,7 @@ package Package;
  *
  * @author 20112
  */
+import java.time.LocalDate;
 public class MemberClassRegistration {
     private String memberID;
     private String classID;
@@ -34,10 +35,11 @@ public class MemberClassRegistration {
     }
     
     public String getSearchKey() {
-        return this.memberID + this.classID;
+        return /*this.*/memberID + /*this.*/classID;
     }
     
     public String lineRepresentation( ) {
+        return memberID + ", " + classID + ", " + registrationDate + ", " + status;
     
     }
     
