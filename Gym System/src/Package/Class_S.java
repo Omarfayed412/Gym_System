@@ -8,12 +8,12 @@ package Package;
  *
  * @author 20112
  */
-public class Class extends Person{
+public class Class_S extends Person{
     private String trainerID;
     private int duration;
     private int avialableSeats;
 
-    public Class(String ID, String name, String trainerID, int duration) {
+    public Class_S(String ID, String name, String trainerID, int duration) {
         super(ID, name);
         this.trainerID = trainerID;
         this.duration = duration;
@@ -24,7 +24,10 @@ public class Class extends Person{
     }
 
     public void setAvialableSeats(int avialableSeats) {
-        this.avialableSeats = avialableSeats;
+        if (avialableSeats > 0) { 
+            this.avialableSeats = avialableSeats;
+        }
+        else System.out.println("Invalid number of seats entered.");
     }
     
     @Override

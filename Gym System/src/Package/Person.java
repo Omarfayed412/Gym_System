@@ -8,7 +8,7 @@ package Package;
  *
  * @author 20112
  */
-public abstract class Person{
+public abstract class Person implements Record{
     private final String ID;
     private final String name;    
 
@@ -17,10 +17,12 @@ public abstract class Person{
         this.name = name;        
     }
     
+    @Override
     public String lineRepresentation() {
         return this.ID + "," + this.name;
     }
     
+    @Override
     public String getSearchKey() {
         return ID;
     }

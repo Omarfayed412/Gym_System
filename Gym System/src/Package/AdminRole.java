@@ -4,9 +4,8 @@
  */
 package Package;
 
-import java.util.*;
-import java.io.*;
-import java.lang.System;
+import java.util.ArrayList;
+
 /**
  *
  * @author 20112
@@ -14,26 +13,25 @@ import java.lang.System;
 public class AdminRole{
     private TrainerDatabase database;
 
-    public AdminRole() {
-        this.database = new TrainerDatabase("Trainers.txt");
-        database.readFromFile();
-    }
-    
-    
-    public void addTrainer(String trainerID, String name, String email, String speciality, String phoneNum) {
+    public boolean addTrainer(String trainerID, String name, String email, String speciality, String phoneNum) {
         if (!database.contains(trainerID)) {
             Trainer newTrainer = new Trainer(trainerID, name, email, speciality, phoneNum);
-            database.insertRecord(newTrainer);
+            database.insertRecord((Trainer) newTrainer);
             System.out.println("Trainer added successfully.");
+            return true;
         } else {
             System.out.println("Trainer already exists.");
         }
-      
-    
+        return false;
     }
     
-    public List<Trainer> getListOfTrainers() {
-        return database.returnAllRecords();
+    public ArrayList<Trainer> getListOfTrainers() {
+        ArrayList<Record> records = database.returnAllRecords();
+        ArrayList<Trainer> trainers = null;
+        for (Record i : records) {
+            trainers.add((Trainer)i);
+        }
+        return trainers;
     }
     
     public boolean removeTrainer(String ID) {
@@ -49,6 +47,6 @@ public class AdminRole{
     
     public void logout() {
         database.saveToFile();
-        System.out.println("Saved and logged out.");
+        System.out.println("Data saved successfully.\nLogged out.");
     }
 }

@@ -12,9 +12,31 @@ import java.lang.System;
  *
  * @author 20112
  */
-public class TrainerDatabase {
+public class TrainerDatabase extends Database{
 
-    private final List<Trainer> records;
+    public TrainerDatabase(String fileName) {
+        super(fileName);
+    }
+
+    @Override
+    public Record createRecordFrom(String line) {
+        String ID, name, phoneNum, email, speciality;
+        String[] words = line.split(line);
+        for (int i = 0; i <= words.length - 1; i++) {
+            switch (i) {
+                case 0 -> ID = words[i];
+                case 1 -> name = words[i];
+                case 2 -> email = words[i];
+                case 3 -> speciality = words[i];
+                case 4 -> phoneNum = words[i];
+            }
+        }
+        Trainer trainer = new Trainer(ID, name, email, speciality, phoneNum);
+        return trainer;
+    }
+}
+
+ /* private final List<Trainer> records;
     private final String filename;
 
     public TrainerDatabase(String filename) {
@@ -88,5 +110,4 @@ public class TrainerDatabase {
         } catch (IOException e) {
             System.out.println("Error writing to file");
         }
-    }
-}
+    }*/

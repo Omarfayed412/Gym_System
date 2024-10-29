@@ -33,6 +33,11 @@ public class MemberClassRegistration {
     public LocalDate getRegistrationDate() {
         return this.registrationDate;
     }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+    
     
     public String getSearchKey() {
         return this.memberID + this.classID;
