@@ -3,15 +3,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package Package;
-import java.util.*;
-import java.io.*;
-import java.lang.System;
+
 /**
  *
  * @author DELL-G3
  */
-public class main {
-    public static void main(String[] args) {
-
+public interface LineRepresentionGeneral {
+    String lineRepresentation();
 }
-

@@ -8,33 +8,27 @@ package Package;
  *
  * @author 20112
  */
-public class Class{
-    private String ID;
-    private String name;
+public class Class extends Person{
     private String trainerID;
     private int duration;
-    private static int avialableSeats;
+    private int avialableSeats;
 
     public Class(String ID, String name, String trainerID, int duration) {
-        this.ID = ID;
-        this.name = name;
+        super(ID, name);
         this.trainerID = trainerID;
         this.duration = duration;
     }
 
-    public static int getAvialableSeats() {
-        return avialableSeats;
+    public int getAvialableSeats() {
+        return this.avialableSeats;
     }
 
-    public static void setAvialableSeats(int avialableSeats) {
-        Class.avialableSeats = avialableSeats;
+    public void setAvialableSeats(int avialableSeats) {
+        this.avialableSeats = avialableSeats;
     }
+    
+    @Override
     public String lineRepresentation() {
-    
-    }
-        
-    public int getSearchKey() {
-    
-    }
-    
+        return super.lineRepresentation()+ "," + this.trainerID + "," + this.duration + "," + this.avialableSeats;
+    }       
 }

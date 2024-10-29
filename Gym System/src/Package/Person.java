@@ -8,20 +8,18 @@ package Package;
  *
  * @author 20112
  */
-public abstract class Person {
-    protected String ID;
-    protected String name;
-    protected String email;
-    protected String phoneNum;
+public abstract class Person{
+    private final String ID;
+    private final String name;    
 
-    public Person(String ID, String name, String email, String phoneNum) {
+    public Person(String ID, String name) {
         this.ID = ID;
-        this.name = name;
-        this.email = email;
-        this.phoneNum = phoneNum;
+        this.name = name;        
     }
     
-    abstract String lineRepresentation();
+    public String lineRepresentation() {
+        return this.ID + "," + this.name;
+    }
     
     public String getSearchKey() {
         return ID;
