@@ -8,13 +8,20 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 /**
- *
+ * Github: https://github.com/Omarfayed412/Gym_System
  * @author 20112
  */
 public class TrainerRole{
-    private MemberDatabase memberDatabase;
-    private ClassDatabase classDatabase;
-    private MemberClassRegistrationDatabase registrationDatabase;
+    private final MemberDatabase memberDatabase = new MemberDatabase("D:\\Software\\OOP_JAVA\\Gym_System\\Gym System\\TestData\\Members.txt");
+    private final ClassDatabase classDatabase = new ClassDatabase("D:\\Software\\OOP_JAVA\\Gym_System\\Gym System\\TestData\\Class.txt");
+    private final MemberClassRegistrationDatabase registrationDatabase = new MemberClassRegistrationDatabase("D:\\Software\\OOP_JAVA\\Gym_System\\Gym System\\TestData\\Registration.txt");
+
+    public TrainerRole() {
+        memberDatabase.readFromFile();
+        classDatabase.readFromFile();
+        registrationDatabase.readFromFile();
+    }
+    
     
     public boolean addMember(String memberID, String name, String membershipType, String email, String phoneNum, String status) {
         if (memberDatabase.contains(memberID)) {
@@ -28,7 +35,7 @@ public class TrainerRole{
     
     public ArrayList<Member> getListOfMembers() {
         ArrayList<Record> records = memberDatabase.returnAllRecords();
-        ArrayList<Member> members = null;
+        ArrayList<Member> members = new ArrayList<Member>();
         for (Record i : records) {
             members.add((Member)i);
         }
@@ -49,31 +56,29 @@ public class TrainerRole{
     
     public ArrayList<Class_S> getListOfClasses() {
         ArrayList<Record> records = classDatabase.returnAllRecords();
-        ArrayList<Class_S> classes = null;
+        ArrayList<Class_S> classes = new ArrayList<Class_S>();
         for (Record i : records) {
             classes.add((Class_S)i);
         }
         return classes;
     }
+    
     //Feeh haga 8alat
     public boolean registerMemberForClass (String memberID, String classID, LocalDate registrationDate) {
         //set registration status to true
-        if (memberDatabase.contains(memberID) && classDatabase.contains(classID) && !(registrationDatabase.contains(memberID + classID))) {
+        if (memberDatabase.contains(memberID) && classDatabase.contains(classID)) {
             Class_S clas = (Class_S) classDatabase.getRecord(classID);
-            Member member = (Member) memberDatabase.getRecord(memberID);
-            if (clas != null && member != null) {
                 if (clas.getAvialableSeats() > 0) { 
+                    MemberClassRegistration reg = new MemberClassRegistration(memberID, classID, registrationDate, "Active");
+                    registrationDatabase.insertRecord((MemberClassRegistration) reg);
                     clas.setAvialableSeats(clas.getAvialableSeats() - 1);
-                    MemberClassRegistration reg = new MemberClassRegistration(memberID, classID, "Active", registrationDate);
-                    registrationDatabase.insertRecord((Record) reg);
+                    System.out.println("Member registered successfully.");
                     return true;
                 }
                 else {
                     System.out.println("No seats available.");
                     return false;
                 }
-            }
-            else System.out.println("Null object.");
         }
         
         System.out.println("Error: Invalid class or user ID");
@@ -102,7 +107,7 @@ public class TrainerRole{
     
     public ArrayList<MemberClassRegistration> getListOfRegistration() {
         ArrayList<Record> records = registrationDatabase.returnAllRecords();
-        ArrayList<MemberClassRegistration> registrations = null;
+        ArrayList<MemberClassRegistration> registrations = new ArrayList<MemberClassRegistration>();
         for (Record i : records) {
             registrations.add((MemberClassRegistration)i);
         }

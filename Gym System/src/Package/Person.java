@@ -5,7 +5,7 @@
 package Package;
 
 /**
- *
+ * Github: https://github.com/Omarfayed412/Gym_System
  * @author 20112
  */
 public abstract class Person implements Record{
@@ -14,7 +14,7 @@ public abstract class Person implements Record{
 
     public Person(String ID, String name) {
         this.ID = ID;
-        this.name = name;        
+        this.name = name;         
     }
     
     @Override
@@ -24,6 +24,7 @@ public abstract class Person implements Record{
     
     @Override
     public String getSearchKey() {
-        return ID;
+        return this.ID;
     }
+    
 }

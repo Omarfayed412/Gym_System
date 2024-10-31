@@ -5,7 +5,8 @@
 package Package;
 
 /**
- *
+  * Github: https://github.com/Omarfayed412/Gym_System
+
  * @author 20112
  */
 public class Trainer extends Person{

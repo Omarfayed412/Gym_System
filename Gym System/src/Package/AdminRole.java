@@ -7,12 +7,16 @@ package Package;
 import java.util.ArrayList;
 
 /**
- *
+ * Github: https://github.com/Omarfayed412/Gym_System
  * @author 20112
  */
 public class AdminRole{
-    private TrainerDatabase database;
-
+    private final TrainerDatabase database = new TrainerDatabase("D:\\Software\\OOP_JAVA\\Gym_System\\Gym System\\TestData\\Trainers.txt");
+      
+    public AdminRole() {
+        database.readFromFile();
+    }
+    
     public boolean addTrainer(String trainerID, String name, String email, String speciality, String phoneNum) {
         if (!database.contains(trainerID)) {
             Trainer newTrainer = new Trainer(trainerID, name, email, speciality, phoneNum);
@@ -26,9 +30,12 @@ public class AdminRole{
     }
     
     public ArrayList<Trainer> getListOfTrainers() {
-        ArrayList<Record> records = database.returnAllRecords();
-        ArrayList<Trainer> trainers = null;
-        for (Record i : records) {
+        if (database.returnAllRecords() == null) {
+            System.out.println("Error: No members yet");
+            return null;
+        }
+        ArrayList<Trainer> trainers = new ArrayList<Trainer>();
+        for (Record i : database.returnAllRecords()) {
             trainers.add((Trainer)i);
         }
         return trainers;

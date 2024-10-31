@@ -7,66 +7,53 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Scanner;
 /**
- *
+ * Github: https://github.com/Omarfayed412/Gym_System
  * @author DELL-G3
  */
-public class main {
-    /*public static void main(String[] args) {
-
-    }
-    public static void adminMenu() {
-    
-    }
-    
-    public static void trainerMenu() {
-    
+public class main {    
+    public static void main(String[] args) {
+        mainMenu();
     }
     
     public static void mainMenu() {
-    
-    }*/
-    private static final AdminRole admin = new AdminRole();
-    private static final TrainerRole trainer = new TrainerRole();
-    
-    public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        boolean running = true;
-
+        int choice;
         System.out.println("Welcome to the Gym Management System");
-        while (running) {
-            System.out.println("Select your role:");
+        
+        do {
+            System.out.println("Select your role: ");
             System.out.println("1. Admin");
             System.out.println("2. Trainer");
             System.out.println("3. Exit");
             
-            int choice = input.nextInt();
+            choice = input.nextInt();
             input.nextLine();  
             switch (choice) {
                 case 1 -> adminMenu();
                 case 2 -> trainerMenu();
                 case 3 -> {
                     System.out.println("Exiting system. Goodbye!");
-                    running = false;
                 }
                 default -> System.out.println("Invalid choice. Please try again.");
             }
-        }
+        } while (choice != 3);
+        
         input.close();
     }
     
     public static void adminMenu() {
+        AdminRole admin = new AdminRole();
         Scanner input = new Scanner(System.in);
-        boolean running = true;
-        
-        while (running) {
+        int choice;
+        do {
             System.out.println("\n--- Admin Menu ---");
             System.out.println("1. Add Trainer");
             System.out.println("2. Remove Trainer");
             System.out.println("3. View Trainers");
             System.out.println("4. Logout");
 
-            int choice = input.nextInt();
-            input.nextLine();  
+            choice = input.nextInt();
+            input.nextLine();  // Consume newline
             
             switch (choice) {
                 case 1 -> {
@@ -90,25 +77,27 @@ public class main {
                 }
                 case 3 -> {
                     ArrayList<Trainer> trainers = admin.getListOfTrainers();
-                    System.out.println("List of Trainers:");
-                    for (Trainer t : trainers) {
-                        System.out.println(t.lineRepresentation());
+                    if (trainers != null) {
+                        System.out.println("List of Trainers:");
+                        for (Trainer t : trainers) {
+                            System.out.println(t.lineRepresentation());
+                        }
                     }
                 }
                 case 4 -> {
                     admin.logout();
-                    running = false;
                 }
                 default -> System.out.println("Invalid choice. Please try again.");
             }
-        }
+        }while (choice != 4);
     }
     
     public static void trainerMenu() {
+        TrainerRole trainer = new TrainerRole();
         Scanner input = new Scanner(System.in);
-        boolean running = true;
+        int choice;
         
-        while (running) {
+        do {
             System.out.println("\n--- Trainer Menu ---");
             System.out.println("1. Add Member");
             System.out.println("2. Add Class");
@@ -119,8 +108,8 @@ public class main {
             System.out.println("7. View Registrations");
             System.out.println("8. Logout");
             
-            int choice = input.nextInt();
-            input.nextLine();
+            choice = input.nextInt();
+            input.nextLine();  
             
             switch (choice) {
                 case 1 -> {
@@ -151,7 +140,7 @@ public class main {
                     int duration = input.nextInt();
                     System.out.print("Max Participants: ");
                     int maxParticipants = input.nextInt();
-                    input.nextLine();
+                    input.nextLine(); 
                     trainer.addClass(classId, className, trainerId, duration, maxParticipants);
                 }
                 case 3 -> {
@@ -192,11 +181,9 @@ public class main {
                 }
                 case 8 -> {
                     trainer.logout();
-                    running = false;
                 }
                 default -> System.out.println("Invalid choice. Please try again.");
             }
-        }
+        } while (choice != 8);
     }
 }
-
