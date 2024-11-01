@@ -16,5 +16,29 @@ public class MemberDatabase extends TrainerDatabase {
     public MemberDatabase(String fileName) {
         super(fileName);
     }
+<<<<<<< Updated upstream
     //Override all methods here
+=======
+
+    @Override
+    public Record createRecordFrom(String line) {
+        String ID = null, name = null, membership = null, phoneNum = null, status = null, email = null;
+        int duration;
+        String[] words = line.split(line);
+        for (int i = 0; i <= words.length - 1; i++) {
+            switch (i) {
+                case 0 -> ID = words[i];
+                case 1 -> name = words[i];
+                case 2 -> membership = words[i];
+                case 3 -> email = words[i];
+                case 4 -> phoneNum = words[i];
+                case 5 -> status = words[i];
+            }
+        }
+        
+        Member member = new Member(ID, name, membership, phoneNum, status, email);
+        return member;
+    }
+    
+>>>>>>> Stashed changes
 }

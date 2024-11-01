@@ -34,6 +34,10 @@ public class MemberClassRegistration {
         return this.registrationDate;
     }
     
+<<<<<<< Updated upstream
+=======
+    
+>>>>>>> Stashed changes
     public String getSearchKey() {
         return this.memberID + this.classID;
     }

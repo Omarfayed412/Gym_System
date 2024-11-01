@@ -14,6 +14,7 @@ import java.lang.System;
 public class AdminRole{
     private TrainerDatabase database;
 
+<<<<<<< Updated upstream
     public AdminRole() {
         this.database = new TrainerDatabase("Trainers.txt");
         database.readFromFile();
@@ -21,6 +22,9 @@ public class AdminRole{
     
     
     public void addTrainer(String trainerID, String name, String email, String speciality, String phoneNum) {
+=======
+    public boolean addTrainer(String trainerID, String name, String email, String speciality, String phoneNum) {
+>>>>>>> Stashed changes
         if (!database.contains(trainerID)) {
             Trainer newTrainer = new Trainer(trainerID, name, email, speciality, phoneNum);
             database.insertRecord(newTrainer);
@@ -32,8 +36,18 @@ public class AdminRole{
     
     }
     
+<<<<<<< Updated upstream
     public List<Trainer> getListOfTrainers() {
         return database.returnAllRecords();
+=======
+    public ArrayList<Trainer> getListOfTrainers() {
+        ArrayList<Record> records = database.returnAllRecords();
+        ArrayList<Trainer> trainers = null;
+        for (Record i : records) {
+            trainers.add((Trainer)i);
+        }
+        return trainers;
+>>>>>>> Stashed changes
     }
     
     public boolean removeTrainer(String ID) {

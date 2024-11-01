@@ -38,6 +38,7 @@ public class TrainerDatabase {
         }
     }
 
+<<<<<<< Updated upstream
     public Trainer createRecordFrom(String line) {
         //parse
         String[] data = line.split(", ");
@@ -51,6 +52,63 @@ public class TrainerDatabase {
         }
         return null;
     }
+=======
+    @Override
+    public Record createRecordFrom(String line) {
+        String ID = null, name = null, phoneNum = null, email = null, speciality = null;
+        String[] words = line.split(line);
+        for (int i = 0; i <= words.length - 1; i++) {
+            switch (i) {
+                case 0 -> ID = words[i];
+                case 1 -> name = words[i];
+                case 2 -> email = words[i];
+                case 3 -> speciality = words[i];
+                case 4 -> phoneNum = words[i];
+            }
+        }
+        Trainer trainer = new Trainer(ID, name, email, speciality, phoneNum);
+        return trainer;
+    }
+}
+
+ /* private final List<Trainer> records;
+    private final String filename;
+
+    public TrainerDatabase(String filename) {
+        this.filename = filename;
+        this.records = new ArrayList<>();
+        //readFromFile();
+    }
+
+    public void readFromFile() {
+        records.clear();
+        try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                Trainer trainer = createRecordFrom(line);
+                if (trainer != null) {
+                    records.add(trainer);
+                }
+            }
+        } catch (IOException e) {
+            System.out.println("Error reading from file");
+        }
+    }
+
+    public Trainer createRecordFrom(String line) {
+        //parse
+        String[] data = line.split(", ");
+        if (data.length == 5) {
+            String id = data[0];
+            String name = data[1];
+            String email = data[2];
+            String speciality = data[3];
+            String phoneNum = data[4];
+            return new Trainer(id, name, email, speciality, phoneNum);
+        }
+        return null;
+    }
+>>>>>>> Stashed changes
 
     public List<Trainer> returnAllRecords() {
         return records;
@@ -88,5 +146,9 @@ public class TrainerDatabase {
         } catch (IOException e) {
             System.out.println("Error writing to file");
         }
+<<<<<<< Updated upstream
     }
 }
+=======
+    }*/
+>>>>>>> Stashed changes
