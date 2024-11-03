@@ -12,6 +12,7 @@ public class Class_S extends Person{
     private String trainerID;
     private int duration;
     private int avialableSeats;
+    private int maxNum;
 
     public Class_S(String ID, String name, String trainerID, int duration) {
         super(ID, name);
@@ -24,10 +25,18 @@ public class Class_S extends Person{
     }
 
     public void setAvialableSeats(int avialableSeats) {
-        if (avialableSeats > 0) { 
+        if (avialableSeats >= 0) { 
             this.avialableSeats = avialableSeats;
         }
         else System.out.println("Invalid number of seats entered.");
+    }
+
+    public void setMaxNum(int maxNum) {
+        this.maxNum = maxNum;
+    }
+    
+    public int getMaxNum() {
+        return maxNum;
     }
     
     @Override

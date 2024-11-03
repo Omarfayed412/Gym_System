@@ -30,6 +30,7 @@ public class TrainerRole{
         Member member = new Member(memberID, name, membershipType, email, phoneNum, status);
         memberDatabase.insertRecord((Member)member);
         System.out.println("Member added");
+        memberDatabase.saveToFile();
         return true;
     }
     
@@ -49,8 +50,10 @@ public class TrainerRole{
         
         Class_S c = new Class_S(classID, className, trainerID, duration);
         c.setAvialableSeats(maxParticipants);
+        c.setMaxNum(maxParticipants);
         classDatabase.insertRecord((Class_S)c);
         System.out.println("Class added");
+        classDatabase.saveToFile();
         return true;
     }
     
@@ -68,11 +71,12 @@ public class TrainerRole{
         //set registration status to true
         if (memberDatabase.contains(memberID) && classDatabase.contains(classID)) {
             Class_S clas = (Class_S) classDatabase.getRecord(classID);
-                if (clas.getAvialableSeats() > 0) { 
+                if (clas.getAvialableSeats() > 0 && clas.getAvialableSeats() <= clas.getMaxNum()) { 
                     MemberClassRegistration reg = new MemberClassRegistration(memberID, classID, registrationDate, "Active");
                     registrationDatabase.insertRecord((MemberClassRegistration) reg);
                     clas.setAvialableSeats(clas.getAvialableSeats() - 1);
                     System.out.println("Member registered successfully.");
+                    registrationDatabase.saveToFile();
                     return true;
                 }
                 else {
@@ -89,6 +93,7 @@ public class TrainerRole{
         if (registrationDatabase.contains(memberID + classID)) {
             MemberClassRegistration reg = (MemberClassRegistration) registrationDatabase.getRecord(memberID + classID);
             LocalDate current_date = LocalDate.now();
+            System.out.println(current_date.compareTo(reg.getRegistrationDate()));
             if (current_date.compareTo(reg.getRegistrationDate()) <= 3) {
                 reg.setStatus("Canceled");
                 Class_S c = (Class_S) classDatabase.getRecord(classID);
