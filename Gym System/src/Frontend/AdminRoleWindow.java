@@ -4,11 +4,14 @@
  */
 package Frontend;
 
+import Backend.AdminRole;
+
 /**
  *
  * @author DELL-G3
  */
 public class AdminRoleWindow extends javax.swing.JFrame {
+    private AdminRole adminRole = new AdminRole();
 
     /**
      * Creates new form AdminRoleWindow
@@ -138,6 +141,7 @@ public class AdminRoleWindow extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
+        adminRole.logout();
         dispose(); // Close current window
         
     }//GEN-LAST:event_jButton4ActionPerformed
