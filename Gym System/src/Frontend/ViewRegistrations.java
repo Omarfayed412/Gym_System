@@ -16,7 +16,7 @@ public class ViewRegistrations extends javax.swing.JFrame {
      * Creates new form ViewRegistrations
      */
     public ViewRegistrations(TrainerRole trainerRole) {
-        initComponents();
+        
     }
 
     /**

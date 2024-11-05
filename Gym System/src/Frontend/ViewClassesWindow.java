@@ -4,19 +4,47 @@
  */
 package Frontend;
 
+import Backend.Class_S;
 import Backend.TrainerRole;
+import java.util.ArrayList;
+import javax.swing.JFrame;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 
 /**
  *
  * @author 20112
  */
 public class ViewClassesWindow extends javax.swing.JFrame {
+    private TrainerRole trainerRole;
+    ArrayList<Class_S> classes = new ArrayList<Class_S>();
 
     /**
      * Creates new form ViewClassesWindow
      */
     public ViewClassesWindow(TrainerRole trainerRole) {
-        initComponents();
+        this.trainerRole = trainerRole;
+        classes = trainerRole.getListOfClasses(); 
+        String[][] data = new String[100][6];
+        String[] column = {"Class ID", "Class Name", "Trainer ID", " Duration", "Max Participants"};
+        String lineRep;
+        int count = 0;
+        for(Class_S i : classes) {
+            lineRep = i.lineRepresentation();
+            String[] array = lineRep.split(",");
+            for (int k = 0; k < column.length; k++) {
+                data[count][k] = array[k];
+            }
+            count++;
+        }
+        JTable table=new JTable(data,column);    
+        table.setBounds(30,40,800,800);
+        JScrollPane scrollpane=new JScrollPane(table); 
+        JFrame frame = new JFrame();
+        frame.add(scrollpane);
+        frame.setSize(800,800);    
+        frame.setVisible(true); 
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
     /**
