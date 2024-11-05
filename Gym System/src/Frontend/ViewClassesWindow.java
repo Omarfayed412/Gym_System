@@ -23,6 +23,7 @@ public class ViewClassesWindow extends javax.swing.JFrame {
      * Creates new form ViewClassesWindow
      */
     public ViewClassesWindow(TrainerRole trainerRole) {
+        
         this.trainerRole = trainerRole;
         classes = trainerRole.getListOfClasses(); 
         String[] column = {"Class ID", "Class Name", "Trainer ID", " Duration", "Max Participants"};
@@ -38,7 +39,7 @@ public class ViewClassesWindow extends javax.swing.JFrame {
             count++;
         }
         JTable table=new JTable(data,column);    
-        table.setBounds(30,40,800,800);
+        table.setBounds(30,40,800,400);
         JScrollPane scrollpane=new JScrollPane(table); 
         JFrame frame = new JFrame();
         frame.setName("Classes");
@@ -46,8 +47,14 @@ public class ViewClassesWindow extends javax.swing.JFrame {
         frame.setSize(800,800);    
         frame.setVisible(true); 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    
     }
-
+    private void returnBtnActionPerformed(java.awt.event.ActionEvent evt) {                                          
+        // TODO add your handling code here:
+        dispose();
+        TrainerRoleWindow win = new TrainerRoleWindow();
+        win.setVisible(true);
+    }   
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -73,7 +80,6 @@ public class ViewClassesWindow extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
- 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     // End of variables declaration//GEN-END:variables

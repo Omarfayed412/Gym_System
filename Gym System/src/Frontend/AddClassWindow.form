@@ -64,33 +64,38 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="23" pref="23" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="maxPartLbl" alignment="0" pref="149" max="32767" attributes="0"/>
-                          <Component id="durationLbl" alignment="0" max="32767" attributes="0"/>
-                          <Component id="label1" alignment="0" max="32767" attributes="0"/>
-                      </Group>
-                      <Component id="trainerIdLbl" alignment="1" min="-2" pref="149" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Component id="addBtn2" min="-2" pref="114" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="113" max="-2" attributes="0"/>
+                      <Component id="returnBtn" min="-2" pref="114" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
-                  <Component id="label3" alignment="1" min="-2" pref="149" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="maxPartLbl" alignment="0" pref="149" max="32767" attributes="0"/>
+                                  <Component id="durationLbl" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="label1" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                              <Component id="trainerIdLbl" alignment="1" min="-2" pref="149" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="label3" alignment="1" min="-2" pref="149" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="38" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="IDText" alignment="1" min="-2" pref="164" max="-2" attributes="0"/>
+                          <Component id="nameText" alignment="1" min="-2" pref="164" max="-2" attributes="0"/>
+                          <Component id="TrainerIdText" alignment="1" min="-2" pref="164" max="-2" attributes="0"/>
+                          <Component id="durationText" alignment="1" min="-2" pref="164" max="-2" attributes="0"/>
+                          <Component id="maxPartText" alignment="1" min="-2" pref="164" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace pref="38" max="32767" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="IDText" alignment="1" min="-2" pref="164" max="-2" attributes="0"/>
-                  <Component id="nameText" alignment="1" min="-2" pref="164" max="-2" attributes="0"/>
-                  <Component id="TrainerIdText" alignment="1" min="-2" pref="164" max="-2" attributes="0"/>
-                  <Component id="durationText" alignment="1" min="-2" pref="164" max="-2" attributes="0"/>
-                  <Component id="maxPartText" alignment="1" min="-2" pref="164" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="130" max="-2" attributes="0"/>
-              <Component id="addBtn2" min="-2" pref="114" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -123,7 +128,10 @@
                   <Component id="maxPartText" max="32767" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="addBtn2" min="-2" pref="37" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="addBtn2" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
+                  <Component id="returnBtn" alignment="3" min="-2" pref="37" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -233,6 +241,20 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addBtn2ActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="returnBtn">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="0" green="0" red="0" type="rgb"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Return"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="returnBtnActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
