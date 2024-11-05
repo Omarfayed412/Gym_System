@@ -10,18 +10,23 @@ package Frontend;
  */
 import Constants.FileNames;
 import java.awt.event.ActionEvent;
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import javax.swing.JOptionPane;
+import Backend.AdminRole;
 
 public class AddTrainerWindow extends javax.swing.JFrame {
 
+    private AdminRole adminRole;
     /**
      * Creates new form AddTrainerWindow
      */
     public AddTrainerWindow() {
         initComponents();
+        adminRole = new AdminRole();
     }
 
     /**
@@ -140,22 +145,35 @@ public class AddTrainerWindow extends javax.swing.JFrame {
         String specialty = jTextField4.getText();
         String phoneNumber = jTextField5.getText();
 
-        // Basic validation to check if fields are empty
         if (id.isEmpty() || name.isEmpty() || email.isEmpty() || specialty.isEmpty() || phoneNumber.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Please fill in all fields.", "Input Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
 
-        // Write to the file
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(FileNames.TRAINER_FILENAME, true))) {
-            writer.write(id + "," + name + "," + email + "," + specialty + "," + phoneNumber);
-            writer.newLine();
+        if (adminRole.addTrainer(id, name, email, specialty, phoneNumber)) {
             JOptionPane.showMessageDialog(this, "Trainer added successfully!");
             clearFields();
-        } catch (IOException e) {
-            JOptionPane.showMessageDialog(this, "Error writing to file: " + e.getMessage(), "File Error", JOptionPane.ERROR_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(this, "A trainer with this ID already exists.", "Input Error", JOptionPane.ERROR_MESSAGE);
         }
     }
+    
+    private boolean trainerExists(String id) {
+        // Check if the trainer with the given ID already exists in the file
+        try (BufferedReader reader = new BufferedReader(new FileReader(FileNames.TRAINER_FILENAME))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] data = line.split(",");
+                if (data[0].equals(id)) {
+                    return true; // Trainer ID exists
+                }
+            }
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(this, "Error reading from file: " + e.getMessage(), "File Error", JOptionPane.ERROR_MESSAGE);
+        }
+        return false; // Trainer ID does not exist
+    }
+
 
     private void clearFields() {
         // Clear all text fields after adding a trainer
