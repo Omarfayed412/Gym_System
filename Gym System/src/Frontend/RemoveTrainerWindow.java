@@ -8,6 +8,9 @@ package Frontend;
  *
  * @author DELL-G3
  */
+import Backend.AdminRole;
+import javax.swing.JOptionPane;
+
 public class RemoveTrainerWindow extends javax.swing.JFrame {
 
     /**
@@ -74,6 +77,20 @@ public class RemoveTrainerWindow extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        String trainerId = jTextField1.getText().trim();
+        
+        if (trainerId.isEmpty()) {
+        javax.swing.JOptionPane.showMessageDialog(this, "Please enter a Trainer ID.", "Input Error", javax.swing.JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+        
+    if (AdminRole.removeTrainer(trainerId)) {
+            JOptionPane.showMessageDialog(this, "Trainer removed successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(this, "Trainer ID not found.", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+        
+        jTextField1.setText("");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

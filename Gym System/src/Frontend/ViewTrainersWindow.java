@@ -5,10 +5,11 @@
 package Frontend;
 
 import Constants.FileNames;
-import Backend.AdminRole;
+//import Backend.AdminRole;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import Backend.Trainer; 
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -18,13 +19,13 @@ import javax.swing.table.DefaultTableModel;
  * @author DELL-G3
  */
 public class ViewTrainersWindow extends javax.swing.JFrame {
-    private AdminRole adminRole;
+    //private AdminRole adminRole;
     /**
      * Creates new form ViewTrainersWindow
      */
     public ViewTrainersWindow() {
         initComponents();
-        adminRole = new AdminRole();
+        //adminRole = new AdminRole();
         loadTrainers();
         setTitle("View Trainers");
     }
@@ -91,16 +92,6 @@ public class ViewTrainersWindow extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     private void loadTrainers() {
-        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-        model.setRowCount(0); // Clear existing data
-
-        for (Trainer trainer : adminRole.getListOfTrainers()) { // Use AdminRole to get trainers
-            model.addRow(new Object[]{trainer.getId(), trainer.getName(), trainer.getEmail(), trainer.getSpecialty(), trainer.getPhoneNumber()});
-        }
-
-        if (model.getRowCount() == 0) {
-            JOptionPane.showMessageDialog(this, "No trainers found.", "Information", JOptionPane.INFORMATION_MESSAGE);
-        }
     }
 
 
