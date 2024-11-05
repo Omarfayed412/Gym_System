@@ -4,6 +4,8 @@
  */
 package Frontend;
 
+import Backend.TrainerRole;
+
 /**
  *
  * @author 20112
@@ -13,7 +15,7 @@ public class ViewClassesWindow extends javax.swing.JFrame {
     /**
      * Creates new form ViewClassesWindow
      */
-    public ViewClassesWindow() {
+    public ViewClassesWindow(TrainerRole trainerRole) {
         initComponents();
     }
 
@@ -72,7 +74,7 @@ public class ViewClassesWindow extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ViewClassesWindow().setVisible(true);
+                new ViewClassesWindow(trainerRole).setVisible(true);
             }
         });
     }

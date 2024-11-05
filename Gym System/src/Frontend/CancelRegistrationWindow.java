@@ -4,6 +4,8 @@
  */
 package Frontend;
 
+import Backend.TrainerRole;
+
 /**
  *
  * @author 20112
@@ -13,7 +15,7 @@ public class CancelRegistrationWindow extends javax.swing.JFrame {
     /**
      * Creates new form CancelRegistrationWindow
      */
-    public CancelRegistrationWindow() {
+    public CancelRegistrationWindow(TrainerRole trainerRole) {
         initComponents();
     }
 
@@ -72,7 +74,7 @@ public class CancelRegistrationWindow extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CancelRegistrationWindow().setVisible(true);
+                new CancelRegistrationWindow(trainerRole).setVisible(true);
             }
         });
     }

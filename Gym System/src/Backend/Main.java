@@ -1,9 +1,6 @@
 package Backend;
 
-import Frontend.FirstPage;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import Frontend.FirstPageWindow;
+
 
 
 public class Main {

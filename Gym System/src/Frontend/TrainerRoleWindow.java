@@ -32,9 +32,9 @@ public class TrainerRoleWindow extends javax.swing.JFrame {
         AddMemberBtn2 = new javax.swing.JButton();
         viewClassesBtn1 = new javax.swing.JButton();
         viewMembersBtn = new javax.swing.JButton();
-        AddMemberBtn1 = new javax.swing.JButton();
+        AddMemberBtn = new javax.swing.JButton();
         viewClassesBtn = new javax.swing.JButton();
-        addClassBtn1 = new javax.swing.JButton();
+        addClassBtn = new javax.swing.JButton();
         registerMemberClassBtn = new javax.swing.JButton();
         cancelRegistrationBtn = new javax.swing.JButton();
         viewRgistrationsBtn = new javax.swing.JButton();
@@ -70,13 +70,13 @@ public class TrainerRoleWindow extends javax.swing.JFrame {
             }
         });
 
-        AddMemberBtn1.setBackground(new java.awt.Color(0, 0, 0));
-        AddMemberBtn1.setForeground(new java.awt.Color(255, 255, 255));
-        AddMemberBtn1.setText("Add Member");
-        AddMemberBtn1.setBorder(null);
-        AddMemberBtn1.addActionListener(new java.awt.event.ActionListener() {
+        AddMemberBtn.setBackground(new java.awt.Color(0, 0, 0));
+        AddMemberBtn.setForeground(new java.awt.Color(255, 255, 255));
+        AddMemberBtn.setText("Add Member");
+        AddMemberBtn.setBorder(null);
+        AddMemberBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AddMemberBtn1ActionPerformed(evt);
+                AddMemberBtnActionPerformed(evt);
             }
         });
 
@@ -89,12 +89,12 @@ public class TrainerRoleWindow extends javax.swing.JFrame {
             }
         });
 
-        addClassBtn1.setBackground(new java.awt.Color(0, 0, 0));
-        addClassBtn1.setForeground(new java.awt.Color(255, 255, 255));
-        addClassBtn1.setText("Add Class");
-        addClassBtn1.addActionListener(new java.awt.event.ActionListener() {
+        addClassBtn.setBackground(new java.awt.Color(0, 0, 0));
+        addClassBtn.setForeground(new java.awt.Color(255, 255, 255));
+        addClassBtn.setText("Add Class");
+        addClassBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addClassBtn1ActionPerformed(evt);
+                addClassBtnActionPerformed(evt);
             }
         });
 
@@ -145,23 +145,23 @@ public class TrainerRoleWindow extends javax.swing.JFrame {
                     .addComponent(viewRgistrationsBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(cancelRegistrationBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(viewMembersBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(addClassBtn1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(addClassBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(viewClassesBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(registerMemberClassBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 183, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(AddMemberBtn1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(AddMemberBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(107, 107, 107))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(30, 30, 30)
-                .addComponent(AddMemberBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(AddMemberBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(viewMembersBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(addClassBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(addClassBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(viewClassesBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -180,13 +180,17 @@ public class TrainerRoleWindow extends javax.swing.JFrame {
 
     private void viewMembersBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewMembersBtnActionPerformed
         // TODO add your handling code here:
-        
+        dispose();
+        ViewMembersWindow member = new ViewMembersWindow(trainerRole);
+        member.setVisible(true);
     }//GEN-LAST:event_viewMembersBtnActionPerformed
 
-    private void AddMemberBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddMemberBtn1ActionPerformed
+    private void AddMemberBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddMemberBtnActionPerformed
         // TODO add your handling code here:
-        new addMemberWindow(trainerRole);
-    }//GEN-LAST:event_AddMemberBtn1ActionPerformed
+        dispose();
+        addMemberWindow addmember = new addMemberWindow(trainerRole);
+        addmember.setVisible(true);
+    }//GEN-LAST:event_AddMemberBtnActionPerformed
 
     private void AddMemberBtn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddMemberBtn2ActionPerformed
         // TODO add your handling code here:
@@ -194,71 +198,55 @@ public class TrainerRoleWindow extends javax.swing.JFrame {
 
     private void viewClassesBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewClassesBtnActionPerformed
         // TODO add your handling code here:
+        dispose();
+        ViewClassesWindow classs = new ViewClassesWindow(trainerRole);
+        classs.setVisible(true);
     }//GEN-LAST:event_viewClassesBtnActionPerformed
 
-    private void addClassBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addClassBtn1ActionPerformed
+    private void addClassBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addClassBtnActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_addClassBtn1ActionPerformed
+        dispose();
+        AddClassWindow classs = new AddClassWindow(trainerRole);
+        classs.setVisible(true);
+    }//GEN-LAST:event_addClassBtnActionPerformed
 
     private void viewClassesBtn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewClassesBtn1ActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_viewClassesBtn1ActionPerformed
 
     private void registerMemberClassBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerMemberClassBtnActionPerformed
         // TODO add your handling code here:
+        dispose();
+        AddRegistrationWindow reg = new AddRegistrationWindow(trainerRole);
+        reg.setVisible(true);
     }//GEN-LAST:event_registerMemberClassBtnActionPerformed
 
     private void cancelRegistrationBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelRegistrationBtnActionPerformed
         // TODO add your handling code here:
+        dispose();
+        CancelRegistrationWindow cancel = new CancelRegistrationWindow(trainerRole);
+        cancel.setVisible(true);
     }//GEN-LAST:event_cancelRegistrationBtnActionPerformed
 
     private void viewRgistrationsBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewRgistrationsBtnActionPerformed
         // TODO add your handling code here:
+        dispose();
+        ViewRegistrations reg = new ViewRegistrations(trainerRole);
+        reg.setVisible(true);
     }//GEN-LAST:event_viewRgistrationsBtnActionPerformed
 
     private void logaoutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logaoutBtnActionPerformed
         // TODO add your handling code here:
+        trainerRole.logout();
+        dispose();
     }//GEN-LAST:event_logaoutBtnActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TrainerRoleWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TrainerRoleWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TrainerRoleWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TrainerRoleWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new TrainerRoleWindow().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton AddMemberBtn1;
+    private javax.swing.JButton AddMemberBtn;
     private javax.swing.JButton AddMemberBtn2;
-    private javax.swing.JButton addClassBtn1;
+    private javax.swing.JButton addClassBtn;
     private javax.swing.JButton cancelRegistrationBtn;
     private javax.swing.JButton logaoutBtn;
     private javax.swing.JButton registerMemberClassBtn;

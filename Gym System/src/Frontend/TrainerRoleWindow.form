@@ -61,13 +61,13 @@
                   <Component id="viewRgistrationsBtn" alignment="1" max="32767" attributes="0"/>
                   <Component id="cancelRegistrationBtn" alignment="1" max="32767" attributes="0"/>
                   <Component id="viewMembersBtn" alignment="1" max="32767" attributes="0"/>
-                  <Component id="addClassBtn1" alignment="0" max="32767" attributes="0"/>
+                  <Component id="addClassBtn" alignment="0" max="32767" attributes="0"/>
                   <Component id="viewClassesBtn" alignment="0" max="32767" attributes="0"/>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       <Component id="registerMemberClassBtn" min="-2" pref="183" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="AddMemberBtn1" alignment="1" max="32767" attributes="0"/>
+                  <Component id="AddMemberBtn" alignment="1" max="32767" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="107" max="-2" attributes="0"/>
           </Group>
@@ -77,11 +77,11 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
-              <Component id="AddMemberBtn1" min="-2" pref="43" max="-2" attributes="0"/>
+              <Component id="AddMemberBtn" min="-2" pref="43" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="viewMembersBtn" min="-2" pref="43" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="addClassBtn1" min="-2" pref="43" max="-2" attributes="0"/>
+              <Component id="addClassBtn" min="-2" pref="43" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="viewClassesBtn" min="-2" pref="43" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -112,7 +112,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="viewMembersBtnActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="AddMemberBtn1">
+    <Component class="javax.swing.JButton" name="AddMemberBtn">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="0" red="0" type="rgb"/>
@@ -126,7 +126,7 @@
         </Property>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AddMemberBtn1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AddMemberBtnActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="viewClassesBtn">
@@ -143,7 +143,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="viewClassesBtnActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="addClassBtn1">
+    <Component class="javax.swing.JButton" name="addClassBtn">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="0" red="0" type="rgb"/>
@@ -154,7 +154,7 @@
         <Property name="text" type="java.lang.String" value="Add Class"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addClassBtn1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addClassBtnActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="registerMemberClassBtn">

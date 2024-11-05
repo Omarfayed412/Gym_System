@@ -3,6 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package Frontend;
+
+import Backend.TrainerRole;
+
 /**
  *
  * @author 20112
@@ -12,7 +15,7 @@ public class AddRegistrationWindow extends javax.swing.JFrame {
     /**
      * Creates new form AddRegistrationWindow
      */
-    public AddRegistrationWindow() {
+    public AddRegistrationWindow(TrainerRole trainerRole) {
         initComponents();
     }
 
@@ -136,7 +139,7 @@ public class AddRegistrationWindow extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AddRegistrationWindow().setVisible(true);
+                new AddRegistrationWindow(trainerRole).setVisible(true);
             }
         });
     }

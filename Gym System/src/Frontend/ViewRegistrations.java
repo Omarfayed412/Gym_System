@@ -4,6 +4,8 @@
  */
 package Frontend;
 
+import Backend.TrainerRole;
+
 /**
  *
  * @author 20112
@@ -13,7 +15,7 @@ public class ViewRegistrations extends javax.swing.JFrame {
     /**
      * Creates new form ViewRegistrations
      */
-    public ViewRegistrations() {
+    public ViewRegistrations(TrainerRole trainerRole) {
         initComponents();
     }
 
@@ -72,7 +74,7 @@ public class ViewRegistrations extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ViewRegistrations().setVisible(true);
+                new ViewRegistrations(trainerRole).setVisible(true);
             }
         });
     }

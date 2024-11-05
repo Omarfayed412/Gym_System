@@ -15,7 +15,7 @@ public class AddClassWindow extends javax.swing.JFrame {
     /**
      * Creates new form AddClassWindow
      */
-    public AddClassWindow() {
+    public AddClassWindow(TrainerRole trainerRole) {
         initComponents();
     }
 
@@ -239,7 +239,7 @@ public class AddClassWindow extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new AddClassWindow().setVisible(true);
+                new AddClassWindow(trainerRole).setVisible(true);
             }
         });
     }
