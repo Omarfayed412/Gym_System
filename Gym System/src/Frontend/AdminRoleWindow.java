@@ -129,8 +129,7 @@ public class AdminRoleWindow extends javax.swing.JFrame {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
         dispose(); // Close current window
-        AdminLogoutWindow adminLogoutWindow = new AdminLogoutWindow();
-        adminLogoutWindow.setVisible(true); 
+        
     }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
