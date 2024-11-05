@@ -20,11 +20,10 @@ import javax.swing.table.DefaultTableModel;
  * @author DELL-G3
  */
 public class ViewTrainersWindow extends javax.swing.JFrame {
-private AdminRole adminRole;
+private AdminRole adminRole = new AdminRole();
     ArrayList<Backend.Trainer> members = new ArrayList<Backend.Trainer>();
     
-    public ViewTrainersWindow(AdminRole adminRole) {        
-        this.adminRole = adminRole;
+    public ViewTrainersWindow() {        
         members = adminRole.getListOfTrainers(); 
         String[] column = {"ID", "Name", "Email", "Spaceiality", "Phone Number"};
         String[][] data = new String[100][column.length];

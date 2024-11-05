@@ -10,8 +10,6 @@ package Frontend;
  */
 
 import Backend.TrainerRole;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 
 public class addMemberWindow extends javax.swing.JFrame {
@@ -230,6 +228,14 @@ public class addMemberWindow extends javax.swing.JFrame {
         if (ID.isEmpty() || name.isEmpty() || email.isEmpty() || status.isEmpty() || phoneNum.isEmpty() || membership.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Please fill in all fields.", "Input Error", JOptionPane.ERROR_MESSAGE);
         }
+        
+        char[] arr = phoneNum.toCharArray();
+        for (char i : arr) {
+            if (!Character.isDigit(i)) {
+                JOptionPane.showMessageDialog(this, "Phone number shouldn't contain letters.", "Input Error", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+        
         else { 
             if (trainerRole.addMember(ID, name, membership, email, phoneNum,status)) {
                 JOptionPane.showMessageDialog(this, "Member added successfully.");
