@@ -1,5 +1,6 @@
-package Backend;
+package Frontend;
 
+import Constants.LoginCredentials;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
