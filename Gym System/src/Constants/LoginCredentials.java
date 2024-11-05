@@ -9,5 +9,8 @@ package Constants;
  * @author 20112
  */
 public interface LoginCredentials {
-    
+    final String ADMIN_USERNAME = "admin";
+    final String ADMIN_PASSWORD = "12345";
+    final String TRAINER_USERNAME = "trainer";
+    final String TRAINER_PASSWORD = "56789";
 }
