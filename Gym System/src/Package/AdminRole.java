@@ -11,7 +11,7 @@ import java.util.ArrayList;
  * @author 20112
  */
 public class AdminRole{
-    private final TrainerDatabase database = new TrainerDatabase("D:\\Software\\OOP_JAVA\\Gym_System\\Gym System\\TestData\\Trainers.txt");
+    private static final TrainerDatabase database = new TrainerDatabase("D:\\Software\\OOP_JAVA\\Gym_System\\Gym System\\TestData\\Trainers.txt");
       
     public AdminRole() {
         database.readFromFile();
@@ -41,7 +41,7 @@ public class AdminRole{
         return trainers;
     }
     
-    public boolean removeTrainer(String ID) {
+    public static boolean removeTrainer(String ID) {
         if (database.contains(ID)) {
             database.deleteRecord(ID);
             System.out.println("Trainer has been removed.");
