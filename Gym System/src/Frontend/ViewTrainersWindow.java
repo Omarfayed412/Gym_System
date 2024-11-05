@@ -5,29 +5,23 @@
 package Frontend;
 
 import Constants.FileNames;
-//import Backend.AdminRole;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import Backend.Trainer; 
-import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-
 
 /**
  *
  * @author DELL-G3
  */
 public class ViewTrainersWindow extends javax.swing.JFrame {
-    //private AdminRole adminRole;
+
     /**
      * Creates new form ViewTrainersWindow
      */
     public ViewTrainersWindow() {
         initComponents();
-        //adminRole = new AdminRole();
         loadTrainers();
-        setTitle("View Trainers");
     }
 
     /**
@@ -92,6 +86,17 @@ public class ViewTrainersWindow extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     private void loadTrainers() {
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        try (BufferedReader reader = new BufferedReader(new FileReader(FileNames.TRAINER_FILENAME))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] data = line.split(",");
+                model.addRow(data);
+            }
+        } catch (IOException e) {
+           
+            javax.swing.JOptionPane.showMessageDialog(this, "Error loading trainers: " + e.getMessage(), "File Error", javax.swing.JOptionPane.ERROR_MESSAGE);
+        }
     }
 
 
