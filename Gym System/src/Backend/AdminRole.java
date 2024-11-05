@@ -5,13 +5,13 @@
 package Backend;
 
 import java.util.ArrayList;
-
+import Constants.FileNames;
 /**
  * Github: https://github.com/Omarfayed412/Gym_System
  * @author 20112
  */
-public class AdminRole{
-    private static final TrainerDatabase database = new TrainerDatabase("D:\\Software\\OOP_JAVA\\Gym_System\\Gym System\\TestData\\Trainers.txt");
+public class AdminRole implements FileNames{
+    private static final TrainerDatabase database = new TrainerDatabase(FileNames.TRAINER_FILENAME);
       
     public AdminRole() {
         database.readFromFile();

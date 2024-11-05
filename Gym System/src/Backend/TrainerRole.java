@@ -6,15 +6,15 @@ package Backend;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
-
+import Constants.FileNames;
 /**
  * Github: https://github.com/Omarfayed412/Gym_System
  * @author 20112
  */
 public class TrainerRole{
-    private final MemberDatabase memberDatabase = new MemberDatabase("D:\\Software\\OOP_JAVA\\Gym_System\\Gym System\\TestData\\Members.txt");
-    private final ClassDatabase classDatabase = new ClassDatabase("D:\\Software\\OOP_JAVA\\Gym_System\\Gym System\\TestData\\Class.txt");
-    private final MemberClassRegistrationDatabase registrationDatabase = new MemberClassRegistrationDatabase("D:\\Software\\OOP_JAVA\\Gym_System\\Gym System\\TestData\\Registration.txt");
+    private final MemberDatabase memberDatabase = new MemberDatabase(FileNames.MEMBER_FILENAME);
+    private final ClassDatabase classDatabase = new ClassDatabase(FileNames.CLASS_FILENAME);
+    private final MemberClassRegistrationDatabase registrationDatabase = new MemberClassRegistrationDatabase(FileNames.REGISTRATION_FILENAME);
 
     public TrainerRole() {
         memberDatabase.readFromFile();
