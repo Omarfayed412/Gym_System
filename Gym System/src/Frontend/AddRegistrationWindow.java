@@ -67,6 +67,7 @@ public class AddRegistrationWindow extends javax.swing.JFrame {
         dateLbl.setText("Date");
 
         addBtn.setBackground(new java.awt.Color(0, 0, 0));
+        addBtn.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         addBtn.setForeground(new java.awt.Color(255, 255, 255));
         addBtn.setText("Add");
         addBtn.addActionListener(new java.awt.event.ActionListener() {

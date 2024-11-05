@@ -240,7 +240,7 @@ public class addMemberWindow extends javax.swing.JFrame {
         String status = statusText.getText();
         
         if (ID.isEmpty() || name.isEmpty() || email.isEmpty() || status.isEmpty() || phoneNum.isEmpty() || membership.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Please fill in all fields.", "Input Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Some fields are Empty!", "Input Error", JOptionPane.ERROR_MESSAGE);
         }
         else { 
             char[] arr = phoneNum.toCharArray();
