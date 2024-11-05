@@ -16,7 +16,7 @@ import javax.swing.JTable;
  * @author 20112
  */
 public class ViewRegistrations extends javax.swing.JFrame {
-private TrainerRole trainerRole;
+    private TrainerRole trainerRole;
     ArrayList<MemberClassRegistration> members = new ArrayList<MemberClassRegistration>();
     
     public ViewRegistrations(TrainerRole trainerRole) {        
@@ -38,7 +38,7 @@ private TrainerRole trainerRole;
         table.setBounds(30,40,800,500);
         JScrollPane scrollpane=new JScrollPane(table); 
         JFrame frame = new JFrame();
-        frame.setName("Member Registrations");
+        frame.setName("Member Registration");
         frame.add(scrollpane);
         frame.setSize(800,500);    
         frame.setVisible(true); 
