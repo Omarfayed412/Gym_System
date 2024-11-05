@@ -139,18 +139,18 @@ public class AddRegistrationWindow extends javax.swing.JFrame {
     private void addBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBtnActionPerformed
         // TODO add your handling code here:
         String memberId = memberIDText.getText();
-        String trainerID = classIDText.getText();
+        String classID = classIDText.getText();
         String date = dateText.getText();
      
-        if (memberId.isEmpty() || trainerID.isEmpty() || date.isEmpty()) {
+        if (memberId.isEmpty() || classID.isEmpty() || date.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Please fill in all fields.", "Input Error", JOptionPane.ERROR_MESSAGE);
         }
         else {
-            if (trainerRole.registerMemberForClass(memberId, trainerID, LocalDate.parse(date))) {
-                JOptionPane.showMessageDialog(this, "Member added successfully.");
+            if (trainerRole.registerMemberForClass(memberId, classID, LocalDate.parse(date))) {
+                JOptionPane.showMessageDialog(this, "Member successfully registered.");
                 clearFields();
             } else {
-                JOptionPane.showMessageDialog(this, "Member already exists.", "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Class has no available seats", "Error", JOptionPane.ERROR_MESSAGE);
             }
         }
     }//GEN-LAST:event_addBtnActionPerformed

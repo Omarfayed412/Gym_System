@@ -230,10 +230,10 @@ public class AddClassWindow extends javax.swing.JFrame {
         }
         else { 
             if (trainerRole.addClass(ID, name, trainerID, Integer.parseInt(duration), Integer.parseInt(max))) {
-                JOptionPane.showMessageDialog(this, "Member added successfully.");
+                JOptionPane.showMessageDialog(this, "Class added successfully.");
                 clearFields();
             } else {
-                JOptionPane.showMessageDialog(this, "Member already exists.", "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Class already exists.", "Error", JOptionPane.ERROR_MESSAGE);
             }
         }
     }//GEN-LAST:event_addBtn2ActionPerformed
