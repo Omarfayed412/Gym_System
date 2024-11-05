@@ -41,7 +41,7 @@ public class LoginPageForTrainer extends JFrame {
                 if (username.equals(LoginCredentials.TRAINER_USERNAME) &&
                         password.equals(LoginCredentials.TRAINER_PASSWORD)) {
                     dispose();  // Close login frame
-                    openTrainerRoleWindow();
+//                    openTrainerRoleWindow();
                 } else {
                     JOptionPane.showMessageDialog(LoginPageForTrainer.this, "Invalid credentials. Please try again.",
                             "Login Failed", JOptionPane.ERROR_MESSAGE);
@@ -56,15 +56,15 @@ public class LoginPageForTrainer extends JFrame {
         setVisible(true);
     }
 
-    private void openTrainerRoleWindow() {
-        JFrame trainerFrame = new JFrame("Trainer Role");
-        trainerFrame.setDefaultCloseOperation(EXIT_ON_CLOSE);
-        trainerFrame.setSize(400, 300);
-        trainerFrame.setLocationRelativeTo(null);
-        trainerFrame.setVisible(true);
-    }
+//    private void openTrainerRoleWindow() {
+//        JFrame trainerFrame = new JFrame("Trainer Role");
+//        trainerFrame.setDefaultCloseOperation(EXIT_ON_CLOSE);
+//        trainerFrame.setSize(400, 300);
+//        trainerFrame.setLocationRelativeTo(null);
+//        trainerFrame.setVisible(true);
+//    }
 
-    public static void main(String[] args) {
-        new LoginPageForTrainer(); // Run for testing purposes
-    }
+//    public static void main(String[] args) {
+//        new LoginPageForTrainer(); // Run for testing purposes
+//    }
 }

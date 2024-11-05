@@ -5,21 +5,33 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class LoginPageForAdmin extends JFrame{
+public class LoginPageForAdmin extends JFrame {
     private JPasswordField passwordField;
+
+    // Initialize panel and components
     private JPanel panel1;
-    private JFormattedTextField usernameField;
+    private JTextField usernameField; // Change to JTextField for standard username input
     private JButton button1;
-    private JFrame frame2;
 
+    public LoginPageForAdmin() {
+        // Initialize frame
+        setTitle("Login Frame For Admin");
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setPreferredSize(new Dimension(300, 200));
+        setResizable(false);
 
-    public LoginPageForAdmin(){
-        frame2 = new JFrame("login Frame For Admin");
-        frame2.setDefaultCloseOperation(EXIT_ON_CLOSE);
-        frame2.setPreferredSize(new Dimension(250,200));
-        frame2.setResizable(false);
+        panel1.setLayout(new GridLayout(3, 2)); // Use grid layout for better organization
 
+        // Add components
+        panel1.add(new JLabel("Username:"));
+        panel1.add(usernameField);
 
+        panel1.add(new JLabel("Password:"));
+        panel1.add(passwordField);
+
+        panel1.add(button1);
+
+        // Add action listener for the login button
         button1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -27,28 +39,24 @@ public class LoginPageForAdmin extends JFrame{
                 String password = new String(passwordField.getPassword());
                 if (username.equals(LoginCredentials.ADMIN_USERNAME) &&
                         password.equals(LoginCredentials.ADMIN_PASSWORD)) {
-                    frame2.setVisible(false);
+                    dispose(); // Close the login frame
+                    new AdminRoleWindow(new AdminRole()); // Pass AdminRole to AdminRoleWindow
                 } else {
-
-                    JOptionPane.showMessageDialog(frame2, "Invalid credentials. Please try again.",
+                    JOptionPane.showMessageDialog(LoginPageForAdmin.this,
+                            "Invalid credentials. Please try again.",
                             "Login Failed", JOptionPane.ERROR_MESSAGE);
                 }
-
             }
         });
 
-        frame2.add(panel1);
-        frame2.pack();
-        frame2.setLocationRelativeTo(null);
-        frame2.setVisible(true);
+        // Finalize frame setup
+        add(panel1);
+        pack();
+        setLocationRelativeTo(null);
+        setVisible(true);
     }
-//    private void openAdminRoleWindow() {
-//        JFrame adminFrame = new JFrame("Admin Role");
-//        adminFrame.setDefaultCloseOperation(EXIT_ON_CLOSE);
-//        adminFrame.setSize(400, 300);
-//        adminFrame.setLocationRelativeTo(null);
-//        adminFrame.setVisible(true);
-//    }
 
-
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(LoginPageForAdmin::new);
+    }
 }

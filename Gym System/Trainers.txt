@@ -1,2 +1,0 @@
-T001,jomana,jomana@examplje.com,Yoga,1234567890
-T002,omar,omar@example.com,Pilates,0987654321
