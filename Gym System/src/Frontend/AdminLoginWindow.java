@@ -98,7 +98,8 @@ public class AdminLoginWindow extends javax.swing.JFrame {
         if (username.equals(LoginCredentials.ADMIN_USERNAME) && password.equals(LoginCredentials.ADMIN_PASSWORD)) {
             JOptionPane.showMessageDialog(this, "Login successful!");
             dispose();
-            // Proceed to next window, e.g., new AdminDashboard().setVisible(true);
+            AdminRoleWindow adminRoleWindow = new AdminRoleWindow();
+            adminRoleWindow.setVisible(true); 
         } else {
             JOptionPane.showMessageDialog(this, "Wrong username or password!", "Login Failed", JOptionPane.ERROR_MESSAGE);
         }
