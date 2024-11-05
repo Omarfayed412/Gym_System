@@ -229,6 +229,28 @@ public class AddClassWindow extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Please fill in all fields.", "Input Error", JOptionPane.ERROR_MESSAGE);
         }
         else { 
+            char[] arr = name.toCharArray();
+            for (char i : arr) {
+                if (Character.isDigit(i)) {
+                    JOptionPane.showMessageDialog(this, "Name shouldn't contain numbers.", "Input Error", JOptionPane.ERROR_MESSAGE);
+                    return ;
+                }
+            }
+            
+            arr = duration.toCharArray();
+            for (char i : arr) {
+                if (!Character.isDigit(i)) {
+                    JOptionPane.showMessageDialog(this, "Duration shouldn't contain letters.", "Input Error", JOptionPane.ERROR_MESSAGE);
+                    return ;
+                }
+            }
+            arr = max.toCharArray();
+            for (char i : arr) {
+                if (!Character.isDigit(i)) {
+                    JOptionPane.showMessageDialog(this, "Maximum number shouldn't contain letters.", "Input Error", JOptionPane.ERROR_MESSAGE);
+                    return ;
+                }
+            }
             if (trainerRole.addClass(ID, name, trainerID, Integer.parseInt(duration), Integer.parseInt(max))) {
                 JOptionPane.showMessageDialog(this, "Class added successfully.");
                 clearFields();

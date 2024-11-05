@@ -228,15 +228,28 @@ public class addMemberWindow extends javax.swing.JFrame {
         if (ID.isEmpty() || name.isEmpty() || email.isEmpty() || status.isEmpty() || phoneNum.isEmpty() || membership.isEmpty()) {
             JOptionPane.showMessageDialog(this, "Please fill in all fields.", "Input Error", JOptionPane.ERROR_MESSAGE);
         }
-        
-        char[] arr = phoneNum.toCharArray();
-        for (char i : arr) {
-            if (!Character.isDigit(i)) {
-                JOptionPane.showMessageDialog(this, "Phone number shouldn't contain letters.", "Input Error", JOptionPane.ERROR_MESSAGE);
-            }
-        }
-        
         else { 
+            char[] arr = phoneNum.toCharArray();
+            for (char i : arr) {
+                if (!Character.isDigit(i)) {
+                    JOptionPane.showMessageDialog(this, "Phone number shouldn't contain letters.", "Input Error", JOptionPane.ERROR_MESSAGE);
+                    return ;
+                }
+            }
+            
+            arr = name.toCharArray();
+            for (char i : arr) {
+                if (Character.isDigit(i)) {
+                    JOptionPane.showMessageDialog(this, "Name shouldn't contain numbers.", "Input Error", JOptionPane.ERROR_MESSAGE);
+                    return ;
+                }
+            }
+            
+            if (!(email.contains("@gmail.com"))) {
+                    JOptionPane.showMessageDialog(this, "Please enter a valid email.", "Input Error", JOptionPane.ERROR_MESSAGE);
+                    return ;
+            }
+            
             if (trainerRole.addMember(ID, name, membership, email, phoneNum,status)) {
                 JOptionPane.showMessageDialog(this, "Member added successfully.");
                 clearFields();

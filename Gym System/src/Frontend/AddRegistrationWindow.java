@@ -146,6 +146,17 @@ public class AddRegistrationWindow extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Please fill in all fields.", "Input Error", JOptionPane.ERROR_MESSAGE);
         }
         else {
+            String[] datearr = date.split("-");
+            if (Integer.parseInt(datearr[1]) > 12 ||  Integer.parseInt(datearr[1]) < 1) {
+                JOptionPane.showMessageDialog(this, "Please enter a valid month date.", "Input Error", JOptionPane.ERROR_MESSAGE);
+                return ;
+            }
+            
+            if (Integer.parseInt(datearr[2]) > 31 ||  Integer.parseInt(datearr[2]) < 1) {
+                JOptionPane.showMessageDialog(this, "Please enter a valid day date.", "Input Error", JOptionPane.ERROR_MESSAGE);
+                return ;
+            }
+            
             if (trainerRole.registerMemberForClass(memberId, classID, LocalDate.parse(date))) {
                 JOptionPane.showMessageDialog(this, "Member successfully registered.");
                 clearFields();
