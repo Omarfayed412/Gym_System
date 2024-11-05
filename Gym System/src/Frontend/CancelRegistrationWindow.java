@@ -55,6 +55,7 @@ public class CancelRegistrationWindow extends javax.swing.JFrame {
         });
 
         cancelBtn.setBackground(new java.awt.Color(0, 0, 0));
+        cancelBtn.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         cancelBtn.setForeground(new java.awt.Color(255, 255, 255));
         cancelBtn.setText("Cancel");
         cancelBtn.addActionListener(new java.awt.event.ActionListener() {

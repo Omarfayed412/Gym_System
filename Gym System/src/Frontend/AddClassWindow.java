@@ -124,6 +124,7 @@ public class AddClassWindow extends javax.swing.JFrame {
         });
 
         addBtn2.setBackground(new java.awt.Color(0, 0, 0));
+        addBtn2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         addBtn2.setForeground(new java.awt.Color(255, 255, 255));
         addBtn2.setText("Add");
         addBtn2.addActionListener(new java.awt.event.ActionListener() {

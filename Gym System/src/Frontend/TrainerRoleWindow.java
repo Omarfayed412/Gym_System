@@ -62,6 +62,7 @@ public class TrainerRoleWindow extends javax.swing.JFrame {
         setTitle("Trainer Role");
 
         viewMembersBtn.setBackground(new java.awt.Color(0, 0, 0));
+        viewMembersBtn.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         viewMembersBtn.setForeground(new java.awt.Color(255, 255, 255));
         viewMembersBtn.setText("View Members");
         viewMembersBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -71,6 +72,7 @@ public class TrainerRoleWindow extends javax.swing.JFrame {
         });
 
         AddMemberBtn.setBackground(new java.awt.Color(0, 0, 0));
+        AddMemberBtn.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         AddMemberBtn.setForeground(new java.awt.Color(255, 255, 255));
         AddMemberBtn.setText("Add Member");
         AddMemberBtn.setBorder(null);
@@ -81,6 +83,7 @@ public class TrainerRoleWindow extends javax.swing.JFrame {
         });
 
         viewClassesBtn.setBackground(new java.awt.Color(0, 0, 0));
+        viewClassesBtn.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         viewClassesBtn.setForeground(new java.awt.Color(255, 255, 255));
         viewClassesBtn.setText("View Classes");
         viewClassesBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -90,6 +93,7 @@ public class TrainerRoleWindow extends javax.swing.JFrame {
         });
 
         addClassBtn.setBackground(new java.awt.Color(0, 0, 0));
+        addClassBtn.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         addClassBtn.setForeground(new java.awt.Color(255, 255, 255));
         addClassBtn.setText("Add Class");
         addClassBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -99,6 +103,7 @@ public class TrainerRoleWindow extends javax.swing.JFrame {
         });
 
         registerMemberClassBtn.setBackground(new java.awt.Color(0, 0, 0));
+        registerMemberClassBtn.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         registerMemberClassBtn.setForeground(new java.awt.Color(255, 255, 255));
         registerMemberClassBtn.setText("Register Member for Class");
         registerMemberClassBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -108,6 +113,7 @@ public class TrainerRoleWindow extends javax.swing.JFrame {
         });
 
         cancelRegistrationBtn.setBackground(new java.awt.Color(0, 0, 0));
+        cancelRegistrationBtn.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         cancelRegistrationBtn.setForeground(new java.awt.Color(255, 255, 255));
         cancelRegistrationBtn.setText("Cancel Regstration");
         cancelRegistrationBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -117,6 +123,7 @@ public class TrainerRoleWindow extends javax.swing.JFrame {
         });
 
         viewRgistrationsBtn.setBackground(new java.awt.Color(0, 0, 0));
+        viewRgistrationsBtn.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         viewRgistrationsBtn.setForeground(new java.awt.Color(255, 255, 255));
         viewRgistrationsBtn.setText("View Registrations");
         viewRgistrationsBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -126,6 +133,7 @@ public class TrainerRoleWindow extends javax.swing.JFrame {
         });
 
         logaoutBtn.setBackground(new java.awt.Color(0, 0, 0));
+        logaoutBtn.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         logaoutBtn.setForeground(new java.awt.Color(255, 255, 255));
         logaoutBtn.setText("Logout");
         logaoutBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -139,7 +147,7 @@ public class TrainerRoleWindow extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(110, Short.MAX_VALUE)
+                .addContainerGap(109, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(logaoutBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(viewRgistrationsBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
