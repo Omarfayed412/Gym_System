@@ -9,15 +9,18 @@ package Frontend;
  * @author DELL-G3
  */
 import javax.swing.JFrame;
-import Frontend.TrainerLoginWindow;
-import Frontend.AdminLoginWindow;
+
 public class FirstPageWindow extends javax.swing.JFrame {
 
     /**
      * Creates new form FirstPageWindow
      */
     public FirstPageWindow() {
-        initComponents();
+        setTitle("First Page Window");
+        setSize(400, 300);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        initComponents(); 
+        setVisible(true);
     }
 
     /**
@@ -89,13 +92,15 @@ public class FirstPageWindow extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handlding code here:
         dispose(); // Close current window
-        new AdminLoginWindow();
+        AdminLoginWindow adminLoginWindow = new AdminLoginWindow();
+        adminLoginWindow.setVisible(true); 
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         dispose(); // Close current window
-        new TrainerLoginWindow();
+        TrainerLoginWindow trainerLoginWindow = new TrainerLoginWindow();
+        trainerLoginWindow.setVisible(true); 
     }//GEN-LAST:event_jButton2ActionPerformed
 
     /**

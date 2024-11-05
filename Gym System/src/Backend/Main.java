@@ -7,8 +7,8 @@ import Frontend.FirstPageWindow;
 
 public class Main {
 
-    public static void main(String[] args) {
-        new FirstPageWindow();
+//    public static void main(String[] args) {
+//        new FirstPageWindow();
 
-    }
+   // }
 }
