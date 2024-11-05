@@ -22,8 +22,8 @@ public class ViewMembersWindow extends javax.swing.JFrame {
     public ViewMembersWindow(TrainerRole trainerRole) {        
         this.trainerRole = trainerRole;
         members = trainerRole.getListOfMembers(); 
-        String[][] data = new String[100][6];
         String[] column = {"ID", "Name", "Email", "Membership Type", "Phone Number", "Status"};
+        String[][] data = new String[100][column.length];
         String lineRep;
         int count = 0;
         for(Member i : members) {
@@ -38,6 +38,7 @@ public class ViewMembersWindow extends javax.swing.JFrame {
         table.setBounds(30,40,800,500);
         JScrollPane scrollpane=new JScrollPane(table); 
         JFrame frame = new JFrame();
+        frame.setName("Members");
         frame.add(scrollpane);
         frame.setSize(800,500);    
         frame.setVisible(true); 

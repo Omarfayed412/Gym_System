@@ -25,8 +25,8 @@ public class ViewClassesWindow extends javax.swing.JFrame {
     public ViewClassesWindow(TrainerRole trainerRole) {
         this.trainerRole = trainerRole;
         classes = trainerRole.getListOfClasses(); 
-        String[][] data = new String[100][6];
         String[] column = {"Class ID", "Class Name", "Trainer ID", " Duration", "Max Participants"};
+        String[][] data = new String[100][column.length];
         String lineRep;
         int count = 0;
         for(Class_S i : classes) {
@@ -41,6 +41,7 @@ public class ViewClassesWindow extends javax.swing.JFrame {
         table.setBounds(30,40,800,800);
         JScrollPane scrollpane=new JScrollPane(table); 
         JFrame frame = new JFrame();
+        frame.setName("Classes");
         frame.add(scrollpane);
         frame.setSize(800,800);    
         frame.setVisible(true); 
