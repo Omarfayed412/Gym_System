@@ -178,6 +178,23 @@ public class AddTrainerWindow extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "Phone number shouldn't contain letters.", "Input Error", JOptionPane.ERROR_MESSAGE);
             }
         }
+        
+        
+        arr = name.toCharArray();
+        for (char i : arr) {
+                if (Character.isDigit(i)) {
+                    JOptionPane.showMessageDialog(this, "Name shouldn't contain numbers.", "Input Error", JOptionPane.ERROR_MESSAGE);
+                    return ;
+                }
+            }
+        
+        if (!(email.contains("@gmail.com"))) {
+                    JOptionPane.showMessageDialog(this, "Please enter a valid email.", "Input Error", JOptionPane.ERROR_MESSAGE);
+                    return ;
+            }
+            
+        
+        
 
         if (adminRole.addTrainer(id, name, email, specialty, phoneNumber)) {
             JOptionPane.showMessageDialog(this, "Trainer added successfully!");
