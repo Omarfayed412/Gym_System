@@ -9,14 +9,17 @@ package Frontend;
  * @author 20112
  */
 import Backend.TrainerRole;
+import javax.swing.JOptionPane;
 
 public class AddClassWindow extends javax.swing.JFrame {
+    private TrainerRole trainerRole;
 
     /**
      * Creates new form AddClassWindow
      */
     public AddClassWindow(TrainerRole trainerRole) {
         initComponents();
+        this.trainerRole = trainerRole;
     }
 
     /**
@@ -35,11 +38,11 @@ public class AddClassWindow extends javax.swing.JFrame {
         label1 = new java.awt.Label();
         IDText = new javax.swing.JTextField();
         label3 = new java.awt.Label();
-        NameText = new javax.swing.JTextField();
+        nameText = new javax.swing.JTextField();
         trainerIdLbl = new java.awt.Label();
         TrainerIdText = new javax.swing.JTextField();
         durationLbl = new java.awt.Label();
-        TrainerIdText1 = new javax.swing.JTextField();
+        durationText = new javax.swing.JTextField();
         maxPartLbl = new java.awt.Label();
         maxPartText = new javax.swing.JTextField();
         addBtn2 = new javax.swing.JButton();
@@ -81,9 +84,9 @@ public class AddClassWindow extends javax.swing.JFrame {
         label3.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         label3.setText("Class Name");
 
-        NameText.addActionListener(new java.awt.event.ActionListener() {
+        nameText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NameTextActionPerformed(evt);
+                nameTextActionPerformed(evt);
             }
         });
 
@@ -103,9 +106,9 @@ public class AddClassWindow extends javax.swing.JFrame {
         durationLbl.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         durationLbl.setText("Duration");
 
-        TrainerIdText1.addActionListener(new java.awt.event.ActionListener() {
+        durationText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TrainerIdText1ActionPerformed(evt);
+                durationTextActionPerformed(evt);
             }
         });
 
@@ -123,6 +126,11 @@ public class AddClassWindow extends javax.swing.JFrame {
         addBtn2.setBackground(new java.awt.Color(0, 0, 0));
         addBtn2.setForeground(new java.awt.Color(255, 255, 255));
         addBtn2.setText("Add");
+        addBtn2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addBtn2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -141,9 +149,9 @@ public class AddClassWindow extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(IDText, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(NameText, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nameText, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(TrainerIdText, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(TrainerIdText1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(durationText, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(maxPartText, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18))
             .addGroup(layout.createSequentialGroup()
@@ -161,7 +169,7 @@ public class AddClassWindow extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(label3, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
-                    .addComponent(NameText))
+                    .addComponent(nameText))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(trainerIdLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
@@ -169,7 +177,7 @@ public class AddClassWindow extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(durationLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
-                    .addComponent(TrainerIdText1))
+                    .addComponent(durationText))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(maxPartLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
@@ -193,72 +201,66 @@ public class AddClassWindow extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_IDText1ActionPerformed
 
-    private void NameTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NameTextActionPerformed
+    private void nameTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nameTextActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_NameTextActionPerformed
+    }//GEN-LAST:event_nameTextActionPerformed
 
     private void TrainerIdTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TrainerIdTextActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TrainerIdTextActionPerformed
 
-    private void TrainerIdText1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TrainerIdText1ActionPerformed
+    private void durationTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_durationTextActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_TrainerIdText1ActionPerformed
+    }//GEN-LAST:event_durationTextActionPerformed
 
     private void maxPartTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_maxPartTextActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_maxPartTextActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AddClassWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AddClassWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AddClassWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AddClassWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+    private void addBtn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBtn2ActionPerformed
+        // TODO add your handling code here:
+        String name = nameText.getText();
+        String ID = IDText.getText();
+        String trainerID = TrainerIdText.getText();
+        String max = maxPartText.getText();
+        String duration = durationText.getText();
+        
+        if (ID.isEmpty() || name.isEmpty() || trainerID.isEmpty() || max.isEmpty() || duration.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please fill in all fields.", "Input Error", JOptionPane.ERROR_MESSAGE);
         }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new AddClassWindow(trainerRole).setVisible(true);
+        else { 
+            if (trainerRole.addClass(ID, name, trainerID, Integer.parseInt(duration), Integer.parseInt(max))) {
+                JOptionPane.showMessageDialog(this, "Member added successfully.");
+                clearFields();
+            } else {
+                JOptionPane.showMessageDialog(this, "Member already exists.", "Error", JOptionPane.ERROR_MESSAGE);
             }
-        });
-    }
+        }
+    }//GEN-LAST:event_addBtn2ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField IDText;
     private javax.swing.JTextField IDText1;
-    private javax.swing.JTextField NameText;
     private javax.swing.JTextField TrainerIdText;
-    private javax.swing.JTextField TrainerIdText1;
     private javax.swing.JButton addBtn;
     private javax.swing.JButton addBtn1;
     private javax.swing.JButton addBtn2;
     private java.awt.Label durationLbl;
+    private javax.swing.JTextField durationText;
     private java.awt.Label label1;
     private java.awt.Label label2;
     private java.awt.Label label3;
     private java.awt.Label maxPartLbl;
     private javax.swing.JTextField maxPartText;
+    private javax.swing.JTextField nameText;
     private java.awt.Label trainerIdLbl;
     // End of variables declaration//GEN-END:variables
+    private void clearFields() {
+            IDText.setText("");        
+            nameText.setText("");
+            maxPartText.setText("");
+            durationText.setText("");
+            TrainerIdText.setText("");
+        }
 }

@@ -80,9 +80,9 @@
               <EmptySpace pref="38" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="IDText" alignment="1" min="-2" pref="164" max="-2" attributes="0"/>
-                  <Component id="NameText" alignment="1" min="-2" pref="164" max="-2" attributes="0"/>
+                  <Component id="nameText" alignment="1" min="-2" pref="164" max="-2" attributes="0"/>
                   <Component id="TrainerIdText" alignment="1" min="-2" pref="164" max="-2" attributes="0"/>
-                  <Component id="TrainerIdText1" alignment="1" min="-2" pref="164" max="-2" attributes="0"/>
+                  <Component id="durationText" alignment="1" min="-2" pref="164" max="-2" attributes="0"/>
                   <Component id="maxPartText" alignment="1" min="-2" pref="164" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
@@ -105,7 +105,7 @@
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="label3" alignment="0" pref="33" max="32767" attributes="0"/>
-                  <Component id="NameText" alignment="0" max="32767" attributes="0"/>
+                  <Component id="nameText" alignment="0" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -115,7 +115,7 @@
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="durationLbl" alignment="0" pref="33" max="32767" attributes="0"/>
-                  <Component id="TrainerIdText1" alignment="0" max="32767" attributes="0"/>
+                  <Component id="durationText" alignment="0" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
@@ -165,9 +165,9 @@
         <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="classNameLbl"/>
       </AccessibilityProperties>
     </Component>
-    <Component class="javax.swing.JTextField" name="NameText">
+    <Component class="javax.swing.JTextField" name="nameText">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NameTextActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nameTextActionPerformed"/>
       </Events>
     </Component>
     <Component class="java.awt.Label" name="trainerIdLbl">
@@ -199,9 +199,9 @@
         <Property name="text" type="java.lang.String" value="Duration"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="TrainerIdText1">
+    <Component class="javax.swing.JTextField" name="durationText">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TrainerIdText1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="durationTextActionPerformed"/>
       </Events>
     </Component>
     <Component class="java.awt.Label" name="maxPartLbl">
@@ -231,6 +231,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Add"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addBtn2ActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

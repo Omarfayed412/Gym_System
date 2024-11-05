@@ -22,13 +22,6 @@ public class addMemberWindow extends javax.swing.JFrame {
     public addMemberWindow(TrainerRole trainerRole) {
         this.trainerRole = trainerRole;
         initComponents();
-        // Add action listener for save button
-        addBtn.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                addMember();
-            }
-        });
     }
 
     /**
@@ -96,6 +89,11 @@ public class addMemberWindow extends javax.swing.JFrame {
         addBtn.setBackground(new java.awt.Color(0, 0, 0));
         addBtn.setForeground(new java.awt.Color(255, 255, 255));
         addBtn.setText("Add");
+        addBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addBtnActionPerformed(evt);
+            }
+        });
 
         label1.setAlignment(java.awt.Label.CENTER);
         label1.setBackground(new java.awt.Color(204, 255, 204));
@@ -220,7 +218,8 @@ public class addMemberWindow extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_statusTextActionPerformed
 
-    private void addMember () {
+    private void addBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBtnActionPerformed
+        // TODO add your handling code here:
         String name = nameText.getText();
         String ID = IDText.getText();
         String membership = membershipText.getText();
@@ -228,14 +227,19 @@ public class addMemberWindow extends javax.swing.JFrame {
         String phoneNum = phoneNumText.getText();
         String status = statusText.getText();
         
-        // Use adminRole to add trainer
-        if (trainerRole.addMember(ID, name, membership, email, phoneNum,status)) {
-            JOptionPane.showMessageDialog(this, "Member added successfully.");
-            clearFields();
-        } else {
-            JOptionPane.showMessageDialog(this, "Member already exists.", "Error", JOptionPane.ERROR_MESSAGE);
+        if (ID.isEmpty() || name.isEmpty() || email.isEmpty() || status.isEmpty() || phoneNum.isEmpty() || membership.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please fill in all fields.", "Input Error", JOptionPane.ERROR_MESSAGE);
         }
-    }
+        else { 
+            if (trainerRole.addMember(ID, name, membership, email, phoneNum,status)) {
+                JOptionPane.showMessageDialog(this, "Member added successfully.");
+                clearFields();
+            } else {
+                JOptionPane.showMessageDialog(this, "Member already exists.", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    }//GEN-LAST:event_addBtnActionPerformed
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField IDText;

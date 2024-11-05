@@ -114,7 +114,8 @@ public class TrainerLoginWindow extends javax.swing.JFrame {
         if (username.equals(LoginCredentials.TRAINER_USERNAME) && password.equals(LoginCredentials.TRAINER_PASSWORD)) {
             JOptionPane.showMessageDialog(this, "Login successful!");
             dispose();
-            // Proceed to next window, e.g., new AdminDashboard().setVisible(true);
+            TrainerRoleWindow trainer = new TrainerRoleWindow();
+            trainer.setVisible(true);
         } else {
             JOptionPane.showMessageDialog(this, "Wrong username or password!", "Login Failed", JOptionPane.ERROR_MESSAGE);
         }
