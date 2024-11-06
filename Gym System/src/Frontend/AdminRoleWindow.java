@@ -136,7 +136,7 @@ public class AdminRoleWindow extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         dispose(); // Close current window
-        ViewTrainersWindow viewTrainersWindow = new ViewTrainersWindow();
+        ViewTrainersWindow viewTrainersWindow = new ViewTrainersWindow(adminRole);
         viewTrainersWindow.setVisible(true); 
     }//GEN-LAST:event_jButton3ActionPerformed
 
