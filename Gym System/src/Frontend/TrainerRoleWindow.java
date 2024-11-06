@@ -15,9 +15,7 @@ public class TrainerRoleWindow extends javax.swing.JFrame {
      * Creates new form TrainerRoleWindow
      */
     public TrainerRoleWindow() {
-        
-        initComponents();
-        
+        initComponents();        
     }
 
     /**

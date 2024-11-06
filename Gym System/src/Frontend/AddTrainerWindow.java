@@ -23,6 +23,7 @@ public class AddTrainerWindow extends javax.swing.JFrame {
      * Creates new form AddTrainerWindow
      */
     public AddTrainerWindow() {
+        setTitle("Add Trainer Window");
         initComponents();
         adminRole = new AdminRole();
     }

@@ -17,6 +17,7 @@ public class RemoveTrainerWindow extends javax.swing.JFrame {
      * Creates new form RemoveTrainerWindow
      */
     public RemoveTrainerWindow() {
+        setTitle("Remove Trainer Window");
         initComponents();
     }
 

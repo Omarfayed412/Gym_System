@@ -18,6 +18,7 @@ public class TrainerLoginWindow extends javax.swing.JFrame {
      * Creates new form AdminTrainerWindow
      */
     public TrainerLoginWindow() {
+        setTitle("Trainer Role Login Window");
         initComponents();
     }
 

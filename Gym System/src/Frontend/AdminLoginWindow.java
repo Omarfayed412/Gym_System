@@ -20,6 +20,7 @@ public class AdminLoginWindow extends javax.swing.JFrame {
      * Creates new form AdminLoginWindow
      */
     public AdminLoginWindow() {
+        setTitle("Admin Role Login Window");
         initComponents();
     }
 

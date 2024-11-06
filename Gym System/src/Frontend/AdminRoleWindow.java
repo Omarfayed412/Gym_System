@@ -17,6 +17,7 @@ public class AdminRoleWindow extends javax.swing.JFrame {
      * Creates new form AdminRoleWindow
      */
     public AdminRoleWindow() {
+        setTitle("Admin Role Window");
         initComponents();
     }
 

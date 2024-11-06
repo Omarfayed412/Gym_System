@@ -19,6 +19,7 @@ public class addMemberWindow extends javax.swing.JFrame {
      */
     public addMemberWindow(TrainerRole trainerRole) {
         this.trainerRole = trainerRole;
+        setTitle("Add Member Window");
         initComponents();
     }
 

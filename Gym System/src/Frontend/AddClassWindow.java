@@ -18,6 +18,7 @@ public class AddClassWindow extends javax.swing.JFrame {
      * Creates new form AddClassWindow
      */
     public AddClassWindow(TrainerRole trainerRole) {
+        setTitle("Add Class Window");
         initComponents();
         this.trainerRole = trainerRole;
     }

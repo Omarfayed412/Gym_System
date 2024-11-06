@@ -19,6 +19,7 @@ public class AddRegistrationWindow extends javax.swing.JFrame {
      * Creates new form AddRegistrationWindow
      */
     public AddRegistrationWindow(TrainerRole trainerRole) {
+        setTitle("Add Registration Window");
         initComponents();
         this.trainerRole = trainerRole;
     }

@@ -15,6 +15,7 @@ public class CancelRegistrationWindow extends javax.swing.JFrame {
     private TrainerRole trainerRole;
     
     public CancelRegistrationWindow(TrainerRole trainerRole) {
+        setTitle("Cancel Registration Window");
         initComponents();
         this.trainerRole = trainerRole;
     }
